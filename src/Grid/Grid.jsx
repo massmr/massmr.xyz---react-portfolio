@@ -1,6 +1,12 @@
-//import packages
-import styled from 'styled-components';
+//import styles
 import './Grid.css';
+import { Container,
+  Grid, 
+  GridItem, 
+  OpacityOverlay, 
+  ResumeIconContainer, 
+  ResumeIcon, 
+  ResumeText } from './styled-components.js'
 
 //import components
 import { LeftHandComponent, RightHandComponent } from './SplitScreen/SplitComponents.jsx';
@@ -11,51 +17,7 @@ import { ImagesContainer } from './ImagesContainer/ImagesContainer.jsx';
 import resumeIcon from "./assets/resume-icon.png";
 import MDHome from './assets/MDHobileHome.png';
 import OMF from './assets/ohmyfoodmac.png';
-
-const Container = styled.section`
-  height: calc(100vh - 204.5px);
-  padding: 10px;
-  margin: 25px 0 10px 0;
-`;
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 0.5fr);
-  height: 100%;
-  width: 100%;
-  gap: 15px;
-  overflow: hidden;
-`;
-const GridItem = styled.div`
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-`;
-const ResumeIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.35);
-`;
-const ResumeIcon = styled.img`
-  object-fit: contain;
-  height: calc(100% / 1.8);
-  opacity: 0.2;
-`;
-const ResumeText = styled.h4`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Jost',sans-serif;
-  color: white;
-  z-index: 2;
-  font-size: 20px;
-`;
+import MDPortrait from './assets/FM20.jpg'
 
 export const BentoGrid = () => {
 
@@ -65,7 +27,29 @@ export const BentoGrid = () => {
     background: 'rgb(155,93,229)',
     background: 'linear-gradient(30deg, rgba(155,93,229,1) 0%, rgba(106,62,148,0.9999504089355469) 100%)', 
   }
+  const Item1ImageStyle = {
+    width: '100%',
+    height: '100%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden',
+    backgroundColor: 'rgba(0,0,0,0.2)',
+  }
+  const Item1ButtonStyle = {
+    position: 'relative',
+    bottom: '50px',
+    left: '50%',
+    transform: 'translateX(-50%)',
+    cursor: 'pointer',
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    borderRadius: '8px',
+    border: 'none',
+    padding: '4px 17px',
+    color: '#F8F9FA',
+    fontFamily: `'Jost',sans-serif`,
+    letterSpacing: '2px',
 
+  }
   const rightHandStyle = {
     position: 'relative',
     top: '50%',
@@ -79,33 +63,23 @@ export const BentoGrid = () => {
     textAlign: 'center',
     textShadow: '1px 1px 25px rgba(255,255,255,0.3)',
   }
-  
+
   return (
     <Container>
       <Grid>
 
         <GridItem className="item1">
-
-          <SplitScreen
-            style={splitScreenStyle}
-            leftWidth="50%" 
-            rightWidth="50%">
-
-            <LeftHandComponent
-              name={MDHome} 
-            />
-
-            <RightHandComponent 
-              style={rightHandStyle}
-              name="Projects" 
-            />
-          </SplitScreen>
-
-          <ImagesContainer source={OMF} />
-
+          <ImagesContainer 
+            style={Item1ImageStyle}
+            source={MDPortrait} 
+          />
+          <OpacityOverlay />
+          <button style={Item1ButtonStyle} >Projects</button>
         </GridItem>
 
-        <GridItem className="item2"/>
+        <GridItem className="item2">
+          
+        </GridItem>
 
         <GridItem className="item3"/>
 
