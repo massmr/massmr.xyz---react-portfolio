@@ -12,14 +12,6 @@ export const Grid = styled.div`
   height: 100%;
   width: 100%;
   gap: 15px;
-  overflow: hidden;
-`;
-export const GridItem = styled.div`
-  border-radius: 12px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
 `;
 export const OpacityOverlay = styled.div`
   position: absolute;
@@ -29,6 +21,7 @@ export const OpacityOverlay = styled.div`
   height: 100%;
   background-color: black;
   opacity: 0.3;
+  border-radius: 12px;
 `;
 export const ResumeIconContainer = styled.div`
   display: flex;

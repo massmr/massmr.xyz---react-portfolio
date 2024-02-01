@@ -2,7 +2,6 @@
 import './Grid.css';
 import { Container,
   Grid, 
-  GridItem, 
   OpacityOverlay, 
   ResumeIconContainer, 
   ResumeIcon, 
@@ -12,6 +11,10 @@ import { Container,
 import { LeftHandComponent, RightHandComponent } from './SplitScreen/SplitComponents.jsx';
 import { SplitScreen } from './SplitScreen/SplitScreen.jsx';
 import { ImagesContainer } from './ImagesContainer/ImagesContainer.jsx';
+import { LinkItem } from './LinkItem/LinkItem.jsx';
+import { Modale } from './Modal/Modal.jsx';
+import { GridItem } from './GridItem/GridItem.jsx';
+import { HiddingContainer } from './OverflowHideLayout/OverflowHideLayout.jsx';
 
 //import assets
 import resumeIcon from "./assets/resume-icon.png";
@@ -67,38 +70,56 @@ export const BentoGrid = () => {
   return (
     <Container>
       <Grid>
-
-        <GridItem className="item1">
-          <ImagesContainer 
-            style={Item1ImageStyle}
-            source={MDPortrait} 
-          />
-          <OpacityOverlay />
-          <button style={Item1ButtonStyle} >Projects</button>
+        
+        <GridItem name="item1">
+          <HiddingContainer>
+            
+            <OpacityOverlay />
+            <ImagesContainer 
+              style={Item1ImageStyle}
+              source={MDPortrait} 
+            />
+            <button style={Item1ButtonStyle} >Projects</button>
+          
+          </HiddingContainer>
         </GridItem>
 
-        <GridItem className="item2">
+        <GridItem name="item2">
           
         </GridItem>
 
-        <GridItem className="item3"/>
+        <GridItem name="item3"/>
 
-        <GridItem className="item4"/>
+        <GridItem name="item4"/>
 
-        <GridItem className="item5"/>
+        <GridItem name="item5"/>
 
-        <GridItem className="item6"/>
+        <GridItem name="item6" hasModal>
+          <LinkItem iconName="fa-github" state={true}/>
+          <LinkItem iconName="fa-linkedin-in" state={true}/>
+          <LinkItem iconName="fa-x-twitter" state={true}/>
+          <LinkItem iconName="fa-github" />
 
-        <GridItem className="item7">
+          <Modale>
+            <LinkItem iconName="fa-github" state={true}/>
+            <LinkItem iconName="fa-linkedin-in" state={true}/>
+            <LinkItem iconName="fa-x-twitter" state={true}/>
+          </Modale>
 
-          <ResumeText>RESUME</ResumeText>
-          <ResumeIconContainer>
-            <ResumeIcon src={resumeIcon}></ResumeIcon>
-          </ResumeIconContainer>
+        </GridItem>
+        
+        <GridItem name="item7">
+      
+          <HiddingContainer>
+            <ResumeText>RESUME</ResumeText>
+            <ResumeIconContainer>
+              <ResumeIcon src={resumeIcon}></ResumeIcon>
+            </ResumeIconContainer>
+          </HiddingContainer>
 
         </GridItem>
 
-        <GridItem className="item8"/>
+        <GridItem name="item8"/>
 
       </Grid>
     </Container>
