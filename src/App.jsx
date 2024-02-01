@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+
 import { Header } from './Header/Header.jsx';
 import { Banner } from './Banner/Banner.jsx';
 import { BentoGrid } from './Grid/Grid.jsx';
+import { Modale } from './LayoutsComponents/Modal/Modal.jsx';
 
 const BodyBackground = styled.div`
   display: flex;
@@ -15,11 +18,28 @@ const BodyBackground = styled.div`
 
 const App = () => {
 
+ const [isModaleVisible, setIsModaleVisible] = useState(false);
+
+  const handleModaleOpen = () => {
+    setIsModaleVisible(true);
+  };
+
+  const handleModaleClose = () => {
+    setIsModaleVisible(false);
+  };
+  
   return(
     <>
       <BodyBackground>
+
+        { isModaleVisible && (
+          <Modale 
+            state={isModaleVisible} 
+            handleClose={handleModaleClose}>
+          </Modale>
+        )}
         <Banner />
-        <BentoGrid />
+        <BentoGrid openModale={handleModaleOpen} />
       </BodyBackground>
     </>
   );

@@ -8,13 +8,15 @@ import { Container,
   ResumeText } from './styled-components.js'
 
 //import components
-import { LeftHandComponent, RightHandComponent } from './SplitScreen/SplitComponents.jsx';
-import { SplitScreen } from './SplitScreen/SplitScreen.jsx';
 import { ImagesContainer } from './ImagesContainer/ImagesContainer.jsx';
 import { LinkItem } from './LinkItem/LinkItem.jsx';
-import { Modale } from './Modal/Modal.jsx';
 import { GridItem } from './GridItem/GridItem.jsx';
-import { HiddingContainer } from './OverflowHideLayout/OverflowHideLayout.jsx';
+
+//import layout design patterns components
+import { HiddingContainer } from '../LayoutsComponents/OverflowHideLayout/OverflowHideLayout.jsx';
+import { Modale } from '../LayoutsComponents/Modal/Modal.jsx';
+import { LeftHandComponent, RightHandComponent } from '../LayoutsComponents//SplitScreen/SplitComponents.jsx';
+import { SplitScreen } from '../LayoutsComponents/SplitScreen/SplitScreen.jsx';
 
 //import assets
 import resumeIcon from "./assets/resume-icon.png";
@@ -22,7 +24,7 @@ import MDHome from './assets/MDHobileHome.png';
 import OMF from './assets/ohmyfoodmac.png';
 import MDPortrait from './assets/FM20.jpg'
 
-export const BentoGrid = () => {
+export const BentoGrid = ({ openModale }) => {
 
   const splitScreenStyle = {
     height: '100%',
@@ -70,7 +72,7 @@ export const BentoGrid = () => {
   return (
     <Container>
       <Grid>
-        
+
         <GridItem name="item1">
           <HiddingContainer>
             
@@ -94,27 +96,27 @@ export const BentoGrid = () => {
 
         <GridItem name="item5"/>
 
-        <GridItem name="item6" hasModal>
-          <LinkItem iconName="fa-github" state={true}/>
+        <GridItem 
+          name="item6" 
+          openModale={openModale} >
+          
+          <LinkItem 
+            iconName="fa-github" state={true}/>
           <LinkItem iconName="fa-linkedin-in" state={true}/>
           <LinkItem iconName="fa-x-twitter" state={true}/>
           <LinkItem iconName="fa-github" />
-
-          <Modale>
-            <LinkItem iconName="fa-github" state={true}/>
-            <LinkItem iconName="fa-linkedin-in" state={true}/>
-            <LinkItem iconName="fa-x-twitter" state={true}/>
-          </Modale>
 
         </GridItem>
         
         <GridItem name="item7">
       
           <HiddingContainer>
+
             <ResumeText>RESUME</ResumeText>
             <ResumeIconContainer>
               <ResumeIcon src={resumeIcon}></ResumeIcon>
             </ResumeIconContainer>
+
           </HiddingContainer>
 
         </GridItem>

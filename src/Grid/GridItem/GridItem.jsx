@@ -1,23 +1,12 @@
-import { useState } from 'react';
-import { Modale } from '../Modal/Modal.jsx';
-
-export const GridItem = ({ children, name, hasModal }) => {
-  const [isModaleVisible, setIsModaleVisible] = useState(false);
-
-  const handleModaleOpen = () => {
-    if (hasModal) {
-      setIsModaleVisible(true);
-    }
-  };
-
-  const handleModaleClose = () => {
-    setIsModaleVisible(false);
+export const GridItem = ({ children, name, openModale }) => {
+  const handleOpenModale = () => {
+    openModale();
   };
 
   return (
     <div
-      onClick={handleModaleOpen}
       className={name}
+      onClick={handleOpenModale}
       style={{
         borderRadius: '12px',
         width: '100%',
@@ -27,12 +16,6 @@ export const GridItem = ({ children, name, hasModal }) => {
       }}>
       
       {children}
-      {hasModal && isModaleVisible && (
-        <Modale state={isModaleVisible} 
-        handleClose={handleModaleClose}>
-        </Modale>
-      )}
-
     </div>
   )
 }

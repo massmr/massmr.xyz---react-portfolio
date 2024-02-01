@@ -3,22 +3,19 @@ import styled from 'styled-components'
 
 const ModaleBackground = styled.div`
   position: fixed;
-  margin: 0 auto;
-  width: 100vw;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-  box-sizing: border-box;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 `;
 
 const ModaleBody = styled.div`
   background-color: white;
-  position: relative;
-  margin: 10% auto;
   padding: 20px;
   width: 50%;
 `;

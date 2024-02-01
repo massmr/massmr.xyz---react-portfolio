@@ -1,4 +1,4 @@
-import { ImagesContainer, ProjectImage } from '../ImagesContainer/ImagesContainer.jsx';
+import { ImagesContainer, ProjectImage } from '../../Grid//ImagesContainer/ImagesContainer.jsx';
 
 export const LeftHandComponent = ({ 
   name
