@@ -1,10 +1,15 @@
+//import packages
 import { useState } from 'react';
 import styled from 'styled-components';
 
+//import components
 import { Header } from './Header/Header.jsx';
 import { Banner } from './Banner/Banner.jsx';
 import { BentoGrid } from './Grid/Grid.jsx';
 import { Modale } from './LayoutsComponents/Modal/Modal.jsx';
+
+//import components displayed by modale :
+import { LinkItem } from './Grid/LinkItem/LinkItem.jsx';
 
 const BodyBackground = styled.div`
   display: flex;
@@ -17,17 +22,20 @@ const BodyBackground = styled.div`
 `;
 
 const App = () => {
-
- const [isModaleVisible, setIsModaleVisible] = useState(false);
-
-  const handleModaleOpen = () => {
+  
+  const [isModaleVisible, setIsModaleVisible] = useState(false);
+  
+  const [isModaleContent, setIsModaleContent] = useState();
+  
+  const handleModaleOpen = (content) => {
     setIsModaleVisible(true);
+    setIsModaleContent(content);
   };
 
   const handleModaleClose = () => {
     setIsModaleVisible(false);
   };
-  
+
   return(
     <>
       <BodyBackground>
@@ -36,10 +44,13 @@ const App = () => {
           <Modale 
             state={isModaleVisible} 
             handleClose={handleModaleClose}>
+            {isModaleContent}
           </Modale>
         )}
+
         <Banner />
         <BentoGrid openModale={handleModaleOpen} />
+
       </BodyBackground>
     </>
   );

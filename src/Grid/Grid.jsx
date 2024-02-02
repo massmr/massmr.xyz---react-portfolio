@@ -68,14 +68,29 @@ export const BentoGrid = ({ openModale }) => {
     textAlign: 'center',
     textShadow: '1px 1px 25px rgba(255,255,255,0.3)',
   }
-
+  
+  //callback styles for modale display from App()
+  const ModaleWrapperItem6Style = {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    padding: '20px',
+    gap: '15px',
+  };
+  const ModaleContentItem6Style = {
+    width: '50px !important',
+    height: '50px !important',
+  }
+  
   return (
     <Container>
       <Grid>
 
-        <GridItem name="item1">
+        <GridItem 
+          name="item1"
+          openModale={openModale} >
+
           <HiddingContainer>
-            
+
             <OpacityOverlay />
             <ImagesContainer 
               style={Item1ImageStyle}
@@ -84,6 +99,7 @@ export const BentoGrid = ({ openModale }) => {
             <button style={Item1ButtonStyle} >Projects</button>
           
           </HiddingContainer>
+
         </GridItem>
 
         <GridItem name="item2">
@@ -98,10 +114,30 @@ export const BentoGrid = ({ openModale }) => {
 
         <GridItem 
           name="item6" 
-          openModale={openModale} >
+          openModale={() => openModale(
+            <div style={ModaleWrapperItem6Style}>
+              <div style={{
+                width: '80px',
+                height: '80px',
+              }}>
+                <LinkItem iconName="fa-github" state={true}/>
+              </div>
+              <div style={{
+                width: '80px',
+                height: '80px',
+              }}>
+                <LinkItem iconName="fa-linkedin-in" state={true}/>
+              </div>
+              <div style={{
+                width: '80px',
+                height: '80px',
+              }}>
+                <LinkItem iconName="fa-x-twitter" state={true}/>
+              </div>
+            </div>
+          )} >
           
-          <LinkItem 
-            iconName="fa-github" state={true}/>
+          <LinkItem iconName="fa-github" state={true}/>
           <LinkItem iconName="fa-linkedin-in" state={true}/>
           <LinkItem iconName="fa-x-twitter" state={true}/>
           <LinkItem iconName="fa-github" />
