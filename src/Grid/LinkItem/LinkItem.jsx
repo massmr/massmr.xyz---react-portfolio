@@ -1,6 +1,9 @@
 //import packages
 import { useState, useEffect } from 'react';
 
+//import styles
+import './LinkItem.css';
+
 //import icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -9,38 +12,36 @@ import { faGithub,
   faXTwitter } from "@fortawesome/free-brands-svg-icons";
 library.add({ faGithub, faXTwitter, faLinkedinIn });
 
-export const LinkItem = ({ iconName, state }) => {
-
-  const [isActive, setIsActive] = useState(false);
-  
-  useEffect(() => {
-    if (state) {
-      setIsActive(true);
-    }
-  }, [state]);
-
-  const LinkItemStyle = {
-    width: 'calc(100% / 2 - 3px)',
-    height: 'calc(100% / 2 - 2px)',
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    opacity: isActive ? 1 : 0,
-  }; 
-
-  const linkIconStyle = {
-    transform: 'scale(1.5)',
-    color: '#F8F9FA',
-  }
+export const LinkItem = ({ 
+  iconName, 
+  displayState,
+  modaleState,
+  }) => {
 
   const fullIconName = `fa-brands ${iconName}`;
 
+  const [isActive, setIsActive] = useState(false);
+  const [isInModale, setIsInModale] = useState(false);
+  
+  useEffect(() => {
+    if (displayState) {
+      setIsActive(true);
+    }
+  }, [displayState]);
+
+  useEffect(() => {
+    if (modaleState) {
+      setIsInModale(true);
+    }
+  }, [modaleState]);
+
   return (
-    <div style={LinkItemStyle} >
+    <div  
+    className={`link-item 
+      ${isActive ? 'link-item-active' : ''}
+      ${isInModale ? 'link-item-modale' : ''}`}>
       {fullIconName && <FontAwesomeIcon
-        style={linkIconStyle}
+        className="link-icon"
         icon={fullIconName} />}
     </div>
   );

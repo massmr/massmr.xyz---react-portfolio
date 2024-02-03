@@ -73,14 +73,14 @@ export const BentoGrid = ({ openModale }) => {
   const ModaleWrapperItem6Style = {
     display: 'flex',
     flexFlow: 'row nowrap',
-    padding: '20px',
-    gap: '15px',
+    padding: '30px',
+    gap: '40px',
   };
   const ModaleContentItem6Style = {
     width: '50px !important',
     height: '50px !important',
   }
-  
+
   return (
     <Container>
       <Grid>
@@ -116,30 +116,39 @@ export const BentoGrid = ({ openModale }) => {
           name="item6" 
           openModale={() => openModale(
             <div style={ModaleWrapperItem6Style}>
-              <div style={{
-                width: '80px',
-                height: '80px',
-              }}>
-                <LinkItem iconName="fa-github" state={true}/>
+              <div style={ModaleContentItem6Style}>
+                <LinkItem
+                  className="modale-link-item"
+                  iconName="fa-github" 
+                  modaleState
+                  displayState/>
               </div>
-              <div style={{
-                width: '80px',
-                height: '80px',
-              }}>
-                <LinkItem iconName="fa-linkedin-in" state={true}/>
+              <div style={ModaleContentItem6Style}>
+                <LinkItem 
+                  className="modale-link-item"
+                  iconName="fa-linkedin-in" 
+                  modaleState
+                  displayState/>
               </div>
-              <div style={{
-                width: '80px',
-                height: '80px',
-              }}>
-                <LinkItem iconName="fa-x-twitter" state={true}/>
+              <div style={ModaleContentItem6Style}>
+                <LinkItem 
+                  className="modale-link-item"
+                  iconName="fa-x-twitter" 
+                  modaleState
+                  displayState/>
               </div>
             </div>
           )} >
           
-          <LinkItem iconName="fa-github" state={true}/>
-          <LinkItem iconName="fa-linkedin-in" state={true}/>
-          <LinkItem iconName="fa-x-twitter" state={true}/>
+          <LinkItem 
+            iconName="fa-github" 
+            displayState/>
+          <LinkItem 
+            iconName="fa-linkedin-in" 
+            displayState/>
+          <LinkItem 
+            iconName="fa-x-twitter" 
+            displayState/>
           <LinkItem iconName="fa-github" />
 
         </GridItem>

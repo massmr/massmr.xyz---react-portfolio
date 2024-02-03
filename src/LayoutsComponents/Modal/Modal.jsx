@@ -57,7 +57,7 @@ export const Modale = ({ children,
               onClick={closeModale}
               icon="fa-solid fa-circle-xmark" />
 
-          <div className="modale-wrapper">
+            <div className="modale-wrapper">
               {children}
             </div>
           

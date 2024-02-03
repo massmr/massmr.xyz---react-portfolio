@@ -1,0 +1,26 @@
+.link-item {
+  width: calc(100% / 2 - 3px);
+  height: calc(100% / 2 - 2px);
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.link-item-active {
+  opacity: 1;
+}
+.link-icon {
+  transform: scale(1.5);
+  color: #F8F9FA;
+}
+.link-item-modale {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+}
+.link-item-modale > .link-icon {
+  transform: scale(2.5) !important
+}
+

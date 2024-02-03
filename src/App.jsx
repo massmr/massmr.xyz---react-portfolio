@@ -23,6 +23,10 @@ const BodyBackground = styled.div`
 
 const App = () => {
   
+  //modale logic : 
+    //set modale visibility to true if child component is clicked
+    //get dynamic content to display from clicked componen
+      
   const [isModaleVisible, setIsModaleVisible] = useState(false);
   
   const [isModaleContent, setIsModaleContent] = useState();
