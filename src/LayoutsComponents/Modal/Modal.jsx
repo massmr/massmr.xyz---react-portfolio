@@ -2,6 +2,9 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
+//import styles
+import './Modale.css';
+
 //import icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -24,69 +27,37 @@ export const Modale = ({ children,
     setIsVisible(true);
     setTimeout(() => {
       setIsBackgroundVisible(true);
-    }, 80);
+    }, 190);
   }, []);
 
-  const modaleBackgroundStyle = {
-     position: 'fixed',
-     top: 0,
-     left: 0,
-     width: '100%',
-     height: '100vh',
-     display: 'flex',
-     alignItems: 'center',
-     justifyContent: 'center',
-     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-     backdropFilter: 'blur(2.5px)',
-     zIndex: 999,
-     transition: 'opacity 80ms ease',
-     opacity: isVisible ? 1 : 0,
-  };
-
-  const modaleBodyStyle = {
-    display: 'block',
-    minHeight: '150px',
-    backgroundColor: 'rgba(225,225,225,0.6)',
-    backdropFilter: 'blur(5px)',
-    borderRadius: '12px',
-    width: '80%',
-    transition: 'opacity 80ms ease',
-    opacity: isBackgroundVisible ? 1 : 0,
-  };
-
-  const contentWrapperStyle = {
-    position: 'relative',
-    width: '100%',
-    height: '100%',
-  };
-
-  const closeButtonStyle = {
-    position: 'absolute',
-    top: '10px',
-    right: '10px',
-    color: 'rgba(0,0,0,0.65)',
-    borderRadius: '100%',
-    boxShadow: '0px 0px 4px 1px rgba(0,0,0,0.2)',
-    transform: 'scale(1.3)',
-    cursor: 'pointer',
+  //trigger closing animation
+  const closeModale = () => {
+    setIsBackgroundVisible(false);
+    setTimeout(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        handleClose();
+      }, 190);
+    }, 60)
   };
 
   return(
     <>
       { state &&
         <div 
-          style={modaleBackgroundStyle}
-          onClick={handleClose}>
+          className={`modale-background ${isVisible ? 'modale-background-active' : ''}`}
+          onClick={closeModale}>
           
-          <div style={modaleBodyStyle}
+          <div
+            className={`modale-body ${isBackgroundVisible ? 'modale-body-active' : ''}`}
             onClick={e => e.stopPropagation()}>
             
             <FontAwesomeIcon
-              style={closeButtonStyle}
-              onClick={handleClose}
+              className="modale-close-button"
+              onClick={closeModale}
               icon="fa-solid fa-circle-xmark" />
 
-            <div style={contentWrapperStyle} >
+          <div className="modale-wrapper">
               {children}
             </div>
           
