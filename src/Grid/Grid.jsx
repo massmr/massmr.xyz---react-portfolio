@@ -26,12 +26,8 @@ import MDPortrait from './assets/FM20.jpg'
 
 export const BentoGrid = ({ openModale }) => {
 
-  const splitScreenStyle = {
-    height: '100%',
-    padding: '10px',
-    background: 'rgb(155,93,229)',
-    background: 'linear-gradient(30deg, rgba(155,93,229,1) 0%, rgba(106,62,148,0.9999504089355469) 100%)', 
-  }
+  //Definitely need to transfer this in a separate css file 
+  //to clarify this file component
   const Item1ImageStyle = {
     width: '100%',
     height: '100%',
@@ -70,12 +66,16 @@ export const BentoGrid = ({ openModale }) => {
   }
   
   //callback styles for modale display from App()
+  //This style only applies to the item 6
+  //Each item that has a modal must have a style to send to App()
+  //Maybe I should transfer this to App.css
+  //Maybe to the item itself, need to think about
   const ModaleWrapperItem6Style = {
     display: 'flex',
     flexFlow: 'row nowrap',
     padding: '30px',
     gap: '40px',
-  };
+  }
   const ModaleContentItem6Style = {
     width: '50px !important',
     height: '50px !important',
@@ -117,25 +117,34 @@ export const BentoGrid = ({ openModale }) => {
           openModale={() => openModale(
             <div style={ModaleWrapperItem6Style}>
               <div style={ModaleContentItem6Style}>
-                <LinkItem
-                  className="modale-link-item"
-                  iconName="fa-github" 
-                  modaleState
-                  displayState/>
+                <a href="https:github.com/massmr"
+                  target="_blank">
+                  <LinkItem
+                    className="modale-link-item"
+                    iconName="fa-github" 
+                    modaleState
+                    displayState/>
+                  </a>
               </div>
               <div style={ModaleContentItem6Style}>
-                <LinkItem 
-                  className="modale-link-item"
-                  iconName="fa-linkedin-in" 
-                  modaleState
-                  displayState/>
+                <a href="https://www.linkedin.com/in/massimo-marcellin-987703230/"
+                  target="_blank">
+                  <LinkItem 
+                    className="modale-link-item"
+                    iconName="fa-linkedin-in" 
+                    modaleState
+                    displayState/>
+                  </a>
               </div>
               <div style={ModaleContentItem6Style}>
-                <LinkItem 
-                  className="modale-link-item"
-                  iconName="fa-x-twitter" 
-                  modaleState
-                  displayState/>
+                <a href="https://twitter.com/massmr_"
+                  target="_blank">
+                  <LinkItem 
+                    className="modale-link-item"
+                    iconName="fa-x-twitter" 
+                    modaleState
+                    displayState/>
+                </a>
               </div>
             </div>
           )} >
