@@ -23,29 +23,6 @@ export const OpacityOverlay = styled.div`
   opacity: 0.3;
   border-radius: 12px;
 `;
-export const ResumeIconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.35);
-`;
-export const ResumeIcon = styled.img`
-  object-fit: contain;
-  height: calc(100% / 1.8);
-  opacity: 0.2;
-`;
-export const ResumeText = styled.h4`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Jost',sans-serif;
-  color: white;
-  z-index: 2;
-  font-size: 20px;
-`;
 //test style to force grid ratio and always make it fit its parent
 export const GridRatioWrapper = styled.div`
   position: relative;

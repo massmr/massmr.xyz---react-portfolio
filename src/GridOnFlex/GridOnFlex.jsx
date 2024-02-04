@@ -11,10 +11,11 @@ import './GridOnFlex.css';
 
 //import components 
 import { GridItem } from './GridItem/GridItem.jsx';
-import { LinkItem } from './LinkItem/LinkItem.jsx';
+
 //import items components 
 import { Item1 } from './Items/Item1.jsx'
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
+import { Item6 } from './Items/Item6.jsx';
 
 //import assets
 import resumeIcon from "./assets/resume-icon.png";
@@ -75,7 +76,7 @@ export const Grid = ({ openModale }) => {
 
                 <GridItem className="item-6" 
                   openModale={openModale}>
-
+                  <Item6 />
                 </GridItem>
 
               </div>
