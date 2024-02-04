@@ -5,6 +5,7 @@ const BannerWrapper = styled.div`
   flex-flow: column nowrap;
   padding: 0 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const BannerTitle = styled.h1`

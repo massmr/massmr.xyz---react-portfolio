@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
-  height: calc(100vh - 204.5px);
-  padding: 10px;
-  margin: 25px 0 10px 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 `;
 export const Grid = styled.div`
   display: grid;
@@ -46,4 +46,10 @@ export const ResumeText = styled.h4`
   z-index: 2;
   font-size: 20px;
 `;
-
+//test style to force grid ratio and always make it fit its parent
+export const GridRatioWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/2;
+  padding-bottom: 20px;
+`;

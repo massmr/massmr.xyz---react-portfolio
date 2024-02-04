@@ -1,11 +1,14 @@
+import styled from 'styled-components'
+
 //import styles
 import './Grid.css';
 import { Container,
-  Grid, 
+  Grid,
+  GridRatioWrapper,
   OpacityOverlay, 
   ResumeIconContainer, 
   ResumeIcon, 
-  ResumeText } from './styled-components.js'
+  ResumeText, } from './styled-components.js'
 
 //import components
 import { ImagesContainer } from './ImagesContainer/ImagesContainer.jsx';
@@ -24,47 +27,10 @@ import MDHome from './assets/MDHobileHome.png';
 import OMF from './assets/ohmyfoodmac.png';
 import MDPortrait from './assets/FM20.jpg'
 
+
+
 export const BentoGrid = ({ openModale }) => {
 
-  //Definitely need to transfer this in a separate css file 
-  //to clarify this file component
-  const Item1ImageStyle = {
-    width: '100%',
-    height: '100%',
-    maxWidth: '100%',
-    maxHeight: '100%',
-    overflow: 'hidden',
-    backgroundColor: 'rgba(0,0,0,0.2)',
-  }
-  const Item1ButtonStyle = {
-    position: 'relative',
-    bottom: '50px',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    cursor: 'pointer',
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    borderRadius: '8px',
-    border: 'none',
-    padding: '4px 17px',
-    color: '#F8F9FA',
-    fontFamily: `'Jost',sans-serif`,
-    letterSpacing: '2px',
-
-  }
-  const rightHandStyle = {
-    position: 'relative',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    height: 'calc(100% - 5px)',
-    wordWrap: 'break-word',
-    fontSize: '12.5vw',
-    lineHeight: '0.85',
-    fontFamily: `'Major Mono Display',monospace`,
-    textAlign: 'center',
-    textShadow: '1px 1px 25px rgba(255,255,255,0.3)',
-  }
-  
   //callback styles for modale display from App()
   //This style only applies to the item 6
   //Each item that has a modal must have a style to send to App()
@@ -82,21 +48,21 @@ export const BentoGrid = ({ openModale }) => {
   }
 
   return (
-    <Container>
-      <Grid>
+  <Container>
+    <GridRatioWrapper className="grid-wrapper">
+      <Grid className="grid-cells-container">
 
-        <GridItem 
-          name="item1"
+        <GridItem name="item1"
           openModale={openModale} >
 
           <HiddingContainer>
 
             <OpacityOverlay />
             <ImagesContainer 
-              style={Item1ImageStyle}
+              name="item1-image"
               source={MDPortrait} 
             />
-            <button style={Item1ButtonStyle} >Projects</button>
+            <button className="item1-button">Projects</button>
           
           </HiddingContainer>
 
@@ -112,8 +78,7 @@ export const BentoGrid = ({ openModale }) => {
 
         <GridItem name="item5"/>
 
-        <GridItem 
-          name="item6" 
+        <GridItem name="item6" 
           openModale={() => openModale(
             <div style={ModaleWrapperItem6Style}>
               <div style={ModaleContentItem6Style}>
@@ -178,7 +143,8 @@ export const BentoGrid = ({ openModale }) => {
         <GridItem name="item8"/>
 
       </Grid>
-    </Container>
+    </GridRatioWrapper>
+  </Container>
   );
 };
 

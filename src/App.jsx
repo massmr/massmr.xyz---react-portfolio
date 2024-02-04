@@ -51,10 +51,9 @@ const App = () => {
             {isModaleContent}
           </Modale>
         )}
-
+        
         <Banner />
         <BentoGrid openModale={handleModaleOpen} />
-
       </BodyBackground>
     </>
   );

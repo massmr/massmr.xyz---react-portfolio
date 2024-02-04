@@ -1,7 +1,9 @@
-export const ImagesContainer = ({ source, style }) => {
+import './ImagesContainer.css';
+
+export const ImagesContainer = ({ source, name }) => {
  
   return(
-    <div style={style} >
+    <div className={name} >
       <ProjectImage source={source} />
     </div>
   );
