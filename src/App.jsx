@@ -14,8 +14,6 @@ import './App.css';
 //import components displayed by modale :
 //import { LinkItem } from './Grid/LinkItem/LinkItem.jsx';
 
-
-
 const App = () => {
   
   //modale logic : 
