@@ -1,0 +1,19 @@
+.item-5-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5px;
+
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+}
+.item-5-modale-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 30px;
+  gap: 40px;
+}
+.item-5-modale-content {
+  width: 50px !important;
+  height: 50px !important;
+}
