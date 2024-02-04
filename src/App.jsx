@@ -5,21 +5,16 @@ import styled from 'styled-components';
 //import components
 import { Header } from './Header/Header.jsx';
 import { Banner } from './Banner/Banner.jsx';
-import { BentoGrid } from './Grid/Grid.jsx';
+import { Grid } from './GridOnFlex/GridOnFlex.jsx';
 import { Modale } from './LayoutsComponents/Modal/Modal.jsx';
 
-//import components displayed by modale :
-import { LinkItem } from './Grid/LinkItem/LinkItem.jsx';
+//import styles 
+import './App.css';
 
-const BodyBackground = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-  height: 100%;
-  padding: 10px 20px;
-  background: rgb(102,103,166);
-  background: linear-gradient(30deg, rgba(102,103,166,1) 0%, rgba(46,45,66,1) 100%); 
-`;
+//import components displayed by modale :
+//import { LinkItem } from './Grid/LinkItem/LinkItem.jsx';
+
+
 
 const App = () => {
   
@@ -42,7 +37,7 @@ const App = () => {
 
   return(
     <>
-      <BodyBackground>
+      <section className="body-background">
 
         { isModaleVisible && (
           <Modale 
@@ -51,10 +46,11 @@ const App = () => {
             {isModaleContent}
           </Modale>
         )}
-        
+
         <Banner />
-        <BentoGrid openModale={handleModaleOpen} />
-      </BodyBackground>
+
+        <Grid openModale={handleModaleOpen} />       
+      </section>
     </>
   );
 };
