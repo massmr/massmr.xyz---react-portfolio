@@ -1,8 +1,16 @@
 /*Grid construction through display: flex*/
-
+.grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+  height: 100%;
+  width: 100%;
+}
 .grid-container {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   gap: 15px;
 
   width: 100%;
@@ -97,4 +105,10 @@
   /*may become specific to some items later*/
   background-color: rgba(255,255,255,0.3);
   box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+}
+
+@media (min-width: 1024px) {
+  .grid-wrapper {
+    justify-content: flex-end;
+  }
 }
