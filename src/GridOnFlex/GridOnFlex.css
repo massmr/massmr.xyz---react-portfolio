@@ -3,7 +3,7 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  align-items:  center;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
 }
@@ -15,8 +15,8 @@
   gap: 15px;
 
   width: 100%;
-  height: 100%;
-  max-width: 350px;
+  height: 90%;
+  max-width: 450px;
   max-height: 800px;
 }
 .grid-lvl-1 {
@@ -127,6 +127,9 @@
 }
 
 @media (min-width: 1440px) {
+  .grid-wrapper {
+    padding-bottom: 50px;
+  }
    .grid-container {
     flex-flow: row-reverse nowrap;
     max-height: 720px;
