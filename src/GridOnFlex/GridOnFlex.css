@@ -5,6 +5,7 @@
   align-items:  center;
   height: 100%;
   width: 100%;
+  /*limit on desktop*/
 }
 .grid-container {
   display: flex;
@@ -126,5 +127,11 @@
 @media (min-width: 1024px) {
   .grid-wrapper {
     justify-content: flex-end;
+  }
+  .grid-container {
+    flex-flow: row-reverse nowrap;
+    max-width: none;
+    max-height: none;
+    height: 150%;
   }
 }

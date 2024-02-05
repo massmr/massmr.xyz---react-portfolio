@@ -1,0 +1,30 @@
+.banner-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.banner-title {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 45px;
+  height: 60px;
+  color: #F8F9FA;
+}
+.banner-subtitle {
+   font-family: 'Major Mono Display', monospace;
+   font-size: 18px;
+   color: #F8F9FA;
+   margin: 15px 0 10px 0;
+}
+.banner-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  color: #F8F9FA;
+  font-weight: 300;
+}
+.banner-text-strong {
+  font-weight: 900;
+  color: #9B5DE5;
+}
