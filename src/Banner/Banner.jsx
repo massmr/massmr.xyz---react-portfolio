@@ -8,10 +8,7 @@ export const Banner = () => {
         <div className="banner-text-wrapper">
           <h2 className="banner-subtitle">web developer</h2>
           <h4 className="banner-text">
-          Enter the 
-            <span className="banner-text-strong">
-              digital realm
-            </span>
+          Enter the <span className="banner-text-strong"> digital realm</span>
           </h4>
         </div>
       </div>

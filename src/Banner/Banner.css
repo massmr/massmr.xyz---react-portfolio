@@ -3,7 +3,7 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
 }
 .banner-title {
   display: flex;

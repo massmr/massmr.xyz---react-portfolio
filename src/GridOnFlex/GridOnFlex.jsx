@@ -16,6 +16,7 @@ import { GridItem } from './GridItem/GridItem.jsx';
 import { Item1 } from './Items/Item1.jsx'
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
 import { Item6 } from './Items/Item6.jsx';
+import { Item4 } from './Items/Item4.jsx';
 
 //import assets
 import resumeIcon from "./assets/resume-icon.png";
@@ -58,7 +59,7 @@ export const Grid = ({ openModale }) => {
 
             <GridItem className="item-4"
               openModale={openModale}>
-
+              <Item4 />
             </GridItem>
 
           </div>
