@@ -3,14 +3,20 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   width: 100%;
-  margin-bottom: 30px;
+  max-width: 400px;
 }
-
 .banner-title {
+  display: flex;
+  align-items: center;
   font-family: 'Major Mono Display', monospace;
   font-size: 45px;
   height: 60px;
   color: #F8F9FA;
+}
+.banner-text-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
 }
 .banner-subtitle {
    font-family: 'Major Mono Display', monospace;
@@ -23,6 +29,8 @@
   font-size: 15px;
   color: #F8F9FA;
   font-weight: 300;
+  /*this margin is used to space banner and grid*/
+  margin-bottom: 30px;
 }
 .banner-text-strong {
   font-weight: 900;
@@ -31,6 +39,21 @@
 
 @media (min-width: 1024px) {
   .banner-wrapper {
+    flex-flow: row nowrap;
+    justify-content: space-between;
     max-width: 1440px;
+    padding-bottom: 0px;
+  }
+  .banner-title {
+    font-size: 53px;
+  }
+  .banner-text-wrapper {
+    align-items: flex-end;
+  }
+  .banner-subtitle {
+    margin: 0;
+  }
+  .banner-text {
+    margin-bottom: 0;
   }
 }

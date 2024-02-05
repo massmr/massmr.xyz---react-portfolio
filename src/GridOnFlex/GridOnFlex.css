@@ -5,7 +5,6 @@
   align-items:  center;
   height: 100%;
   width: 100%;
-  /*limit on desktop*/
 }
 .grid-container {
   display: flex;
@@ -131,7 +130,20 @@
   .grid-container {
     flex-flow: row-reverse nowrap;
     max-width: 1440px;
-    max-height: none;
-    height: 150%;
+    max-height: 540px;
+    height: 100%;
+  }
+  .grid-lvl-1 {
+    height: 100%;
+  }
+  .grid-container, .grid-lvl-1, .lvl-2-top-top, .lvl-2-bottom-left, .lvl-2-top-bottom, .lvl-3-bottom-bottom, .grid-lvl-4 {
+    gap: 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+   .grid-container {
+    flex-flow: row-reverse nowrap;
+    max-height: 720px;
   }
 }
