@@ -17,6 +17,7 @@ import { Item1 } from './Items/Item1.jsx'
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
 import { Item6 } from './Items/Item6.jsx';
 import { Item4 } from './Items/Item4.jsx';
+import { Item8 } from './Items/Item8.jsx';
 
 //import assets
 import resumeIcon from "./assets/resume-icon.png";
@@ -75,8 +76,7 @@ export const Grid = ({ openModale }) => {
               </div>
               <div className="grid-lvl-5 item-6-container">
 
-                <GridItem className="item-6" 
-                  openModale={openModale}>
+                <GridItem className="item-6"> 
                   <Item6 />
                 </GridItem>
 
@@ -94,9 +94,8 @@ export const Grid = ({ openModale }) => {
         </div>
         <div className="grid-lvl-2 lvl-2-bottom-right item-8-container">
 
-          <GridItem className="item-8" 
-            openModale={openModale}>
-
+          <GridItem className="item-8">
+            <Item8 />
           </GridItem>
 
         </div>
