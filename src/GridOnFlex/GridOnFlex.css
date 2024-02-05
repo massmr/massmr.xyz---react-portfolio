@@ -126,11 +126,11 @@
 /*All the mediaqueries*/
 @media (min-width: 1024px) {
   .grid-wrapper {
-    justify-content: flex-end;
+    justify-content: center;
   }
   .grid-container {
     flex-flow: row-reverse nowrap;
-    max-width: none;
+    max-width: 1440px;
     max-height: none;
     height: 150%;
   }

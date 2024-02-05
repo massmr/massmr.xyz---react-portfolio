@@ -28,3 +28,9 @@
   font-weight: 900;
   color: #9B5DE5;
 }
+
+@media (min-width: 1024px) {
+  .banner-wrapper {
+    max-width: 1440px;
+  }
+}
