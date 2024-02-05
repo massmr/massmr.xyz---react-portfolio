@@ -24,3 +24,12 @@
   transform: scale(2.5) !important
 }
 
+@media (min-width: 1024px) {
+  .link-item {
+    width: calc(100% / 2 - 7px);
+    height: calc(100% / 2 - 4.5px);
+  }
+  .link-icon {
+    transform: scale(2.5);
+  }
+}
