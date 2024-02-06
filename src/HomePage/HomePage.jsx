@@ -8,6 +8,7 @@ export const HomePage = ({ deployGrid }) => {
     <section className="home-page-container">
       <div className="home-page-wrapper">
         <img 
+          onClick={deployGrid}
           className="home-page-logo"
           src={profilePic}
           alt="logo" />

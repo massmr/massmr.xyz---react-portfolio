@@ -1,9 +1,9 @@
 import './Banner.css';
 
-export const Banner = () => {
+export const Banner = ({ isGridActive }) => {
   return (
     <>
-      <div className="banner-wrapper">
+      <div className={`banner-wrapper ${ isGridActive ? 'banner-deactivation' : ''}`}>
         <h1 className="banner-title">Massmr</h1>
         <div className="banner-text-wrapper">
           <h2 className="banner-subtitle">web developer</h2>

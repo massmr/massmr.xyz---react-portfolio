@@ -60,7 +60,7 @@ const App = () => {
           </Modale>
         )}
         
-        <Banner />
+        <Banner isGridActive={isGridActive} />
         
         { !isGridActive && (
           <HomePage deployGrid={handleGridActivation} />
