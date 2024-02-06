@@ -14,9 +14,10 @@ import { GridItem } from './GridItem/GridItem.jsx';
 
 //import items components 
 import { Item1 } from './Items/Item1.jsx'
+import { Item4 } from './Items/Item4.jsx';
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
 import { Item6 } from './Items/Item6.jsx';
-import { Item4 } from './Items/Item4.jsx';
+import { Item7 } from './Items/Item7.jsx';
 import { Item8 } from './Items/Item8.jsx';
 
 //import assets
@@ -86,7 +87,7 @@ export const Grid = ({ openModale }) => {
 
               <GridItem className="item-7" 
                 openModale={openModale}>
-
+                <Item7 />
               </GridItem>
 
             </div>
