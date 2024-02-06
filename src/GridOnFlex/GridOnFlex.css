@@ -4,7 +4,7 @@
   flex: 1;
   justify-content: center;
   align-items: flex-start;
-  height: 100%;
+  height: calc(100% - 145px);
   width: 100%;
 }
 .grid-container {
@@ -108,6 +108,11 @@
 }
 
 /*All the mediaqueries*/
+@media(min-width: 400px) {
+  .grid-wrapper {
+    height: calc(100% - 93px);
+  }
+}
 @media (min-width: 1024px) {
   .grid-wrapper {
     justify-content: center;
@@ -125,7 +130,6 @@
     gap: 30px;
   }
 }
-
 @media (min-width: 1440px) {
   .grid-wrapper {
     padding-bottom: 50px;
