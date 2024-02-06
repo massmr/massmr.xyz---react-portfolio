@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 
 import aboutMe720 from '../assets/aboutMe720.mp4';
-import aboutMe440 from '../assets/aboutMe440.mp4';
+//import aboutMe440 from '../assets/aboutMe440.mp4';
 import aboutMeIMG from '../assets/aboutMeIMG.svg';
 import './Item4.css';
 
 export const Item4 = () => {
-  const windowWidth = useRef(window.innerWidth);
+  /*const windowWidth = useRef(window.innerWidth);
   console.log(windowWidth);
   
   const selectSource = (width) => {
@@ -14,7 +14,7 @@ export const Item4 = () => {
     return aboutMe440;
   }
   
-  const src = selectSource(windowWidth);
+  const src = selectSource(windowWidth);*/
 
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
@@ -38,7 +38,7 @@ export const Item4 = () => {
         onLoadedData={onLoadedData}
         style={{ display : isVideoLoaded ? 'block' : 'none' }}>
 
-        <source src={src} />
+        <source src={aboutMe720} />
 
       </video>
     </div>
