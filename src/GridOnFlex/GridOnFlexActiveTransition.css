@@ -1,0 +1,62 @@
+.item-active {
+  transform: translateX(0) !important;
+  transform: translateY(0) !important;
+}
+.item-1-container {
+  transition: transform 400ms ease;
+  transform: translateX(-200vh);
+}
+.item-2-container {
+  transition: transform 400ms ease;
+  transform: translateY(-200vh);
+}
+.item-3-container {
+  transition: transform 400ms ease;
+  transform: translateX(200vh);
+}
+.item-4-container {
+  transition: transform 400ms ease;
+  transform: translateX(-200vh);
+}
+.item-5-container {
+  transition: transform 400ms ease;
+  transform: translateX(-200vh);
+}
+.item-6-container {
+  transition: transform 400ms ease;
+  transform: translateY(200vh);
+}
+.item-7-container {
+  transition: transform 400ms ease;
+  transform: translateY(200vh);
+}
+.item-8-container {
+  transition: transform 400ms ease;
+  transform: translateX(200vh);
+}
+@media (min-width: 1024px) {
+  .item-1-container {
+  transform: translateY(-200vh);
+  }
+.item-2-container {
+  transform: translateY(-200vh);
+  }
+.item-3-container {
+  transform: translateX(200vh);
+  }
+.item-4-container {
+  transform: translateX(-200vh);
+  }
+.item-5-container {
+  transform: translateX(-200vh);
+  }
+.item-6-container {
+  transform: translateY(200vh);
+  }
+.item-7-container {
+  transform: translateY(200vh);
+  }
+.item-8-container {
+  transform: translateY(200vh);
+  }
+}

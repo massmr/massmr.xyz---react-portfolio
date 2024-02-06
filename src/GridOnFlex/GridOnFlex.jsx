@@ -2,12 +2,13 @@
 //It is done with flexbox, applied to several layers of divs
 //The item construction begins at <GridItem> components and their children
 //GridItem is defined as a reusable components
-//GriItem's children are reusable: 
-//    ImagesContainer
-//    LinkItem
+
+//import packages
+import { useState, useEffect } from 'react';
 
 //import styles
 import './GridOnFlex.css';
+import './GridOnFlexActiveTransition.css';
 
 //import components 
 import { GridItem } from './GridItem/GridItem.jsx';
@@ -23,32 +24,48 @@ import { Item8 } from './Items/Item8.jsx';
 //import assets
 import resumeIcon from "./assets/resume-icon.png";
 
-export const Grid = ({ openModale }) => {
+export const Grid = ({ openModale, isGridActive }) => {
+
+  const [gridActive, setGridActive] = useState(false);
+
+  useEffect(() => {
+   if (isGridActive) {
+     const timeoutId = setTimeout(() => {
+       setGridActive(true);
+     }, 100);
+
+      return () => clearTimeout(timeoutId); 
+    }
+  }, [isGridActive]);
+
   return (
     <section className="grid-wrapper">
     <div className="grid-container">
       <div className="grid-lvl-1 lvl-1-top">
         <div className="grid-lvl-2 lvl-2-top-top">
-          <div className="grid-lvl-3 lvl-3-top-left item-1-container">
+          <div className={`grid-lvl-3 lvl-3-top-left item-1-container ${gridActive ? 'item-active' : ''}`}>
 
             <GridItem className="item-1"
+              gridActive={gridActive}
               openModale={openModale}>
               <Item1 />
             </GridItem>
 
           </div>
-          <div className="grid-lvl-3 lvl-3-top-right item-2-container">
+          <div className={`grid-lvl-3 lvl-3-top-right item-2-container ${gridActive ? 'item-active' : ''}`}>
 
             <GridItem className="item-2"
+              gridActive={gridActive}
               openModale={openModale}>
 
             </GridItem>
 
           </div>
         </div>
-        <div className="grid-lvl-2 lvl-2-top-bottom item-3-container">
+        <div className={`grid-lvl-2 lvl-2-top-bottom item-3-container ${gridActive ? 'item-active' : ''}`}>
 
           <GridItem className="item-3"
+            gridActive={gridActive}
             openModale={openModale}>
 
           </GridItem>
@@ -57,9 +74,10 @@ export const Grid = ({ openModale }) => {
       </div>
       <div className="grid-lvl-1 lvl-1-bottom">
         <div className="grid-lvl-2 lvl-2-bottom-left">
-          <div className="grid-lvl-3 lvl-3-bottom-top item-4-container">
+          <div className={`grid-lvl-3 lvl-3-bottom-top item-4-container ${gridActive ? 'item-active' : ''}`}>
 
             <GridItem className="item-4"
+              gridActive={gridActive}
               openModale={openModale}>
               <Item4 />
             </GridItem>
@@ -67,25 +85,28 @@ export const Grid = ({ openModale }) => {
           </div>
           <div className="grid-lvl-3 lvl-3-bottom-bottom">
             <div className="grid-lvl-4 lvl-4-left">
-              <div className="grid-lvl-5 item-5-container">
+              <div className={`grid-lvl-5 item-5-container ${gridActive ? 'item-active' : ''}`}>
 
-                <GridItem className="item-5" 
+                <GridItem className="item-5"
+                  gridActive={gridActive}
                   openModale={() => openModale(Item5ModaleContent)}>
                   <Item5 />
                 </GridItem>
 
               </div>
-              <div className="grid-lvl-5 item-6-container">
+              <div className={`grid-lvl-5 item-6-container ${gridActive ? 'item-active' : ''}`}>
 
-                <GridItem className="item-6"> 
+                <GridItem className="item-6" 
+                  gridActive={gridActive}>
                   <Item6 />
                 </GridItem>
 
               </div>
             </div>
-            <div className="grid-lvl-4 lvl-4-right item-7-container">
+            <div className={`grid-lvl-4 lvl-4-right item-7-container ${gridActive ? 'item-active' : ''}`}>
 
-              <GridItem className="item-7" 
+              <GridItem className="item-7"
+                gridActive={gridActive}
                 openModale={openModale}>
                 <Item7 />
               </GridItem>
@@ -93,9 +114,10 @@ export const Grid = ({ openModale }) => {
             </div>
           </div>
         </div>
-        <div className="grid-lvl-2 lvl-2-bottom-right item-8-container">
+        <div className={`grid-lvl-2 lvl-2-bottom-right item-8-container ${gridActive ? 'item-active' : ''}`}>
 
-          <GridItem className="item-8">
+          <GridItem className="item-8"
+            gridActive={gridActive}>
             <Item8 />
           </GridItem>
 

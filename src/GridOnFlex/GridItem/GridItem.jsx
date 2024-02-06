@@ -1,4 +1,8 @@
-export const GridItem = ({ children, name, openModale }) => {
+import './GridItem.css';
+
+export const GridItem = ({ 
+  children, 
+  openModale }) => {
   
   const handleOpenModale = () => {
     openModale();
@@ -6,7 +10,7 @@ export const GridItem = ({ children, name, openModale }) => {
 
   return (
     <div
-      className={name}
+      className="grid-item"
       onClick={handleOpenModale}
       style={{
         borderRadius: '12px',
