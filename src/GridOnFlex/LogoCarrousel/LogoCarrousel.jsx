@@ -9,7 +9,7 @@ export const LogoCarrousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimate(true);
-      setIteration((prevIteration) => (prevIteration + 1) % 5);
+      setIteration((prevIteration) => (prevIteration + 1) % 6);
     }, 2000); // Adjust the interval between slides
 
     return () => clearInterval(interval);
@@ -51,7 +51,11 @@ export const LogoCarrousel = () => {
         </div>
         <div className="carrousel-stack-icon-wrapper">
           <i className="carrousel-stack-icon devicon-wordpress-plain"></i>
-          <h5 className="carrousel-stack-icon-name">wordpress</h5>
+          <h5 className="carrousel-stack-icon-name">Wordpress</h5>
+        </div>
+        <div className="carrousel-stack-icon-wrapper">
+          <i className="carrousel-stack-icon devicon-apache-plain"></i>
+          <h5 className="carrousel-stack-icon-name">Apache</h5>
         </div>
       </div>
     </>
