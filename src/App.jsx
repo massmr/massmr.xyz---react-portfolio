@@ -1,3 +1,6 @@
+//vercel speed insight
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 //import packages
 import { useState } from 'react';
 import styled from 'styled-components';
@@ -35,6 +38,7 @@ const App = () => {
 
   return(
     <>
+      <SpeedInsights />
       <section className="body-background">
 
         { isModaleVisible && (
