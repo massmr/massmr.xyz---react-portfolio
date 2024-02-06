@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 
-import aboutMe1080 from '../assets/aboutMe1080.mp4';
 import aboutMe720 from '../assets/aboutMe720.mp4';
 import aboutMe440 from '../assets/aboutMe440.mp4';
 import aboutMeIMG from '../assets/aboutMeIMG.svg';
@@ -11,8 +10,7 @@ export const Item4 = () => {
   console.log(windowWidth);
   
   const selectSource = (width) => {
-    if(width >= 1080) return aboutMe1080;
-    if(width <= 1080 && width >= 440) return aboutMe720;
+    if(width >= 440) return aboutMe720;
     return aboutMe440;
   }
   
