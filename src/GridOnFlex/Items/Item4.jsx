@@ -1,35 +1,23 @@
-import { useRef, useState } from 'react';
-
 import aboutMe720 from '../assets/aboutMe720.mp4';
 import aboutMeIMG from '../assets/aboutMeIMG.svg';
+
 import './Item4.css';
 
+import { VideoItem } from '../VideoItem/VideoItem.jsx';
+
 export const Item4 = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-
-  const onLoadedData = () => {
-    setIsVideoLoaded(true);
-  }
-
+  
   return (
     <div className="item-4-wrapper">
 
-      <img src={aboutMeIMG}
-        alt="thumbnail"
-        className="item-4-thumbnail"
-        style={{ display: isVideoLoaded ? 'none' : 'block' }} />
-
-      <video playsInline 
-        autoPlay 
-        muted 
-        loop 
-        className="item-4-video"
-        onLoadedData={onLoadedData}
-        style={{ display : isVideoLoaded ? 'block' : 'none' }}>
-
-        <source src={aboutMe720} />
-
-      </video>
+      <VideoItem
+      thumbSource={aboutMeIMG}
+      thumbAlt="about-me thumbnail"
+      thumbClass="item-4-thumbnail"
+      videoSource={aboutMe720}
+      videoClass="item-4-video"/>
+     
     </div>
   );
 };
+
