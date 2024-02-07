@@ -4,26 +4,27 @@
 //GridItem is defined as a reusable components
 
 //import packages
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react'
 
 //import styles
-import './GridOnFlex.css';
-import './GridOnFlexActiveTransition.css';
+import './GridOnFlex.css'
+import './GridOnFlexActiveTransition.css'
 
 //import components 
-import { GridItem } from './GridItem/GridItem.jsx';
+import { GridItem } from './GridItem/GridItem.jsx'
 
 //import items components 
-import { Item1 } from './Items/Item1.jsx';
-import { Item3 } from './Items/Item3.jsx';
-import { Item4 } from './Items/Item4.jsx';
+import { Item1 } from './Items/Item1.jsx'
+import { Item2 } from './Items/Item2.jsx'
+import { Item3 } from './Items/Item3.jsx'
+import { Item4 } from './Items/Item4.jsx'
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
-import { Item6 } from './Items/Item6.jsx';
-import { Item7 } from './Items/Item7.jsx';
-import { Item8 } from './Items/Item8.jsx';
+import { Item6 } from './Items/Item6.jsx'
+import { Item7 } from './Items/Item7.jsx'
+import { Item8 } from './Items/Item8.jsx'
 
 //import assets
-import resumeIcon from "./assets/resume-icon.png";
+import resumeIcon from "./assets/resume-icon.png"
 
 export const Grid = ({ openModale, isGridActive }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -144,7 +145,7 @@ export const Grid = ({ openModale, isGridActive }) => {
             <GridItem className="item-2"
               gridActive={gridActive2}
               openModale={openModale}>
-
+              <Item2 />
             </GridItem>
 
           </div>
