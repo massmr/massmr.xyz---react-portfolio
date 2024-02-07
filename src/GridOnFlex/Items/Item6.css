@@ -20,7 +20,16 @@
   transform: translate(-50%, -50%);
   font-family: 'Jost',sans-serif;
   color: white;
-  z-index: 
-  font-size: 20px;
+  font-size: 15px;
   text-shadow: 0px 0px 10px rgba(0,0,0,7);
+}
+@media (min-width: 440px) {
+  .item-6-text {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .item-6-text {
+    font-size: 30px;
+  }
 }
