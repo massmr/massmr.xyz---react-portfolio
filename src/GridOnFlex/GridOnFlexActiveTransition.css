@@ -16,7 +16,7 @@
 }
 .item-4-container {
   transition: transform 400ms ease;
-  transform: translateX(-200vh);
+  transform: translateX(200vh);
 }
 .item-5-container {
   transition: transform 400ms ease;
@@ -32,7 +32,7 @@
 }
 .item-8-container {
   transition: transform 400ms ease;
-  transform: translateX(200vh);
+  transform: translateY(200vh);
 }
 @media (min-width: 1024px) {
   .item-1-container {

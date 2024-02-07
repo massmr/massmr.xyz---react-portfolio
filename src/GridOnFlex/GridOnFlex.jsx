@@ -4,7 +4,7 @@
 //GridItem is defined as a reusable components
 
 //import packages
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 //import styles
 import './GridOnFlex.css';
@@ -25,16 +25,102 @@ import { Item8 } from './Items/Item8.jsx';
 import resumeIcon from "./assets/resume-icon.png";
 
 export const Grid = ({ openModale, isGridActive }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const [gridActive, setGridActive] = useState(false);
+  const handleWindowResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   useEffect(() => {
-   if (isGridActive) {
-     const timeoutId = setTimeout(() => {
-       setGridActive(true);
-     }, 100);
+    setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleWindowResize);
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
 
-      return () => clearTimeout(timeoutId); 
+  const [gridActive1, setGridActive1] = useState(false);
+  const [gridActive2, setGridActive2] = useState(false);
+  const [gridActive3, setGridActive3] = useState(false);
+  const [gridActive4, setGridActive4] = useState(false);
+  const [gridActive5, setGridActive5] = useState(false);
+  const [gridActive6, setGridActive6] = useState(false);
+  const [gridActive7, setGridActive7] = useState(false);
+  const [gridActive8, setGridActive8] = useState(false);
+
+  useEffect(() => {
+    if (isGridActive) {
+      if (windowWidth < 1024) {
+        const timeoutId1 = setTimeout(() => {
+          setGridActive1(true);
+        }, 100);
+        const timeoutId2 = setTimeout(() => {
+          setGridActive2(true);
+        }, 175);
+        const timeoutId3 = setTimeout(() => {
+          setGridActive3(true);
+        }, 250);
+        const timeoutId4 = setTimeout(() => {
+          setGridActive4(true);
+        }, 325);
+        const timeoutId5 = setTimeout(() => {
+          setGridActive5(true);
+        }, 550);
+        const timeoutId6 = setTimeout(() => {
+          setGridActive6(true);
+        }, 625);
+        const timeoutId7 = setTimeout(() => {
+          setGridActive7(true);
+        }, 475);
+        const timeoutId8 = setTimeout(() => {
+          setGridActive8(true);
+        }, 400);
+        return () => {
+          clearTimeout(timeoutId1);
+          clearTimeout(timeoutId2);
+          clearTimeout(timeoutId3);
+          clearTimeout(timeoutId4);
+          clearTimeout(timeoutId5);
+          clearTimeout(timeoutId6);
+          clearTimeout(timeoutId7);
+          clearTimeout(timeoutId8);
+        }
+      } else {
+        const timeoutId1 = setTimeout(() => {
+          setGridActive1(true);
+        }, 250);
+        const timeoutId2 = setTimeout(() => {
+          setGridActive2(true);
+        }, 175);
+        const timeoutId3 = setTimeout(() => {
+          setGridActive3(true);
+        }, 100);
+        const timeoutId4 = setTimeout(() => {
+          setGridActive4(true);
+        }, 625);
+        const timeoutId5 = setTimeout(() => {
+          setGridActive5(true);
+        }, 550);
+        const timeoutId6 = setTimeout(() => {
+          setGridActive6(true);
+        }, 475);
+        const timeoutId7 = setTimeout(() => {
+          setGridActive7(true);
+        }, 400);
+        const timeoutId8 = setTimeout(() => {
+          setGridActive8(true);
+        }, 325);
+        return () => {
+          clearTimeout(timeoutId1);
+          clearTimeout(timeoutId2);
+          clearTimeout(timeoutId3);
+          clearTimeout(timeoutId4);
+          clearTimeout(timeoutId5);
+          clearTimeout(timeoutId6);
+          clearTimeout(timeoutId7);
+          clearTimeout(timeoutId8);
+        }
+      }
     }
   }, [isGridActive]);
 
@@ -43,29 +129,29 @@ export const Grid = ({ openModale, isGridActive }) => {
     <div className="grid-container">
       <div className="grid-lvl-1 lvl-1-top">
         <div className="grid-lvl-2 lvl-2-top-top">
-          <div className={`grid-lvl-3 lvl-3-top-left item-1-container ${gridActive ? 'item-active' : ''}`}>
+          <div className={`grid-lvl-3 lvl-3-top-left item-1-container ${gridActive1 ? 'item-active' : ''}`}>
 
             <GridItem className="item-1"
-              gridActive={gridActive}
+              gridActive={gridActive1}
               openModale={openModale}>
               <Item1 />
             </GridItem>
 
           </div>
-          <div className={`grid-lvl-3 lvl-3-top-right item-2-container ${gridActive ? 'item-active' : ''}`}>
+          <div className={`grid-lvl-3 lvl-3-top-right item-2-container ${gridActive2 ? 'item-active' : ''}`}>
 
             <GridItem className="item-2"
-              gridActive={gridActive}
+              gridActive={gridActive2}
               openModale={openModale}>
 
             </GridItem>
 
           </div>
         </div>
-        <div className={`grid-lvl-2 lvl-2-top-bottom item-3-container ${gridActive ? 'item-active' : ''}`}>
+        <div className={`grid-lvl-2 lvl-2-top-bottom item-3-container ${gridActive3 ? 'item-active' : ''}`}>
 
           <GridItem className="item-3"
-            gridActive={gridActive}
+            gridActive={gridActive3}
             openModale={openModale}>
 
           </GridItem>
@@ -74,10 +160,10 @@ export const Grid = ({ openModale, isGridActive }) => {
       </div>
       <div className="grid-lvl-1 lvl-1-bottom">
         <div className="grid-lvl-2 lvl-2-bottom-left">
-          <div className={`grid-lvl-3 lvl-3-bottom-top item-4-container ${gridActive ? 'item-active' : ''}`}>
+          <div className={`grid-lvl-3 lvl-3-bottom-top item-4-container ${gridActive4 ? 'item-active' : ''}`}>
 
             <GridItem className="item-4"
-              gridActive={gridActive}
+              gridActive={gridActive4}
               openModale={openModale}>
               <Item4 />
             </GridItem>
@@ -85,28 +171,28 @@ export const Grid = ({ openModale, isGridActive }) => {
           </div>
           <div className="grid-lvl-3 lvl-3-bottom-bottom">
             <div className="grid-lvl-4 lvl-4-left">
-              <div className={`grid-lvl-5 item-5-container ${gridActive ? 'item-active' : ''}`}>
+              <div className={`grid-lvl-5 item-5-container ${gridActive5 ? 'item-active' : ''}`}>
 
                 <GridItem className="item-5"
-                  gridActive={gridActive}
+                  gridActive={gridActive5}
                   openModale={() => openModale(Item5ModaleContent)}>
                   <Item5 />
                 </GridItem>
 
               </div>
-              <div className={`grid-lvl-5 item-6-container ${gridActive ? 'item-active' : ''}`}>
+              <div className={`grid-lvl-5 item-6-container ${gridActive6 ? 'item-active' : ''}`}>
 
                 <GridItem className="item-6" 
-                  gridActive={gridActive}>
+                  gridActive={gridActive6}>
                   <Item6 />
                 </GridItem>
 
               </div>
             </div>
-            <div className={`grid-lvl-4 lvl-4-right item-7-container ${gridActive ? 'item-active' : ''}`}>
+            <div className={`grid-lvl-4 lvl-4-right item-7-container ${gridActive7 ? 'item-active' : ''}`}>
 
               <GridItem className="item-7"
-                gridActive={gridActive}
+                gridActive={gridActive7}
                 openModale={openModale}>
                 <Item7 />
               </GridItem>
@@ -114,10 +200,10 @@ export const Grid = ({ openModale, isGridActive }) => {
             </div>
           </div>
         </div>
-        <div className={`grid-lvl-2 lvl-2-bottom-right item-8-container ${gridActive ? 'item-active' : ''}`}>
+        <div className={`grid-lvl-2 lvl-2-bottom-right item-8-container ${gridActive8 ? 'item-active' : ''}`}>
 
           <GridItem className="item-8"
-            gridActive={gridActive}>
+            gridActive={gridActive8}>
             <Item8 />
           </GridItem>
 
