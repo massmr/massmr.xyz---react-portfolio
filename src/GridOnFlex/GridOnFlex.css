@@ -3,8 +3,11 @@
   display: flex;
   flex: 1;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  /*
   height: calc(100% - 145px);
+  */
+  height: 100dvh;
   width: 100%;
 }
 .grid-container {
