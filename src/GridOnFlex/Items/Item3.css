@@ -1,0 +1,115 @@
+.item-3-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  position: relative;
+}
+.item-3-animated-wrapper {
+  position: relative;
+  background: #6C69F0;
+  background: linear-gradient(270deg, #6C69F0, #A871CF);
+  width: 100%;
+  right: 100%;
+  transition: right 150ms ease-in-out;
+}
+.item-3-animated-wrapper-hovered {
+  right: calc(2 * 100% / 3);
+}
+.item-3-animated-wrapper-focused {
+  right: 0;
+}
+.item-3-animated-wrapper-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(2 * 100% / 3);
+  height: 100%;
+}
+.item-3-animated-wrapper-freespace {
+  width: calc(100% / 3);
+  height: 100%;
+}
+.item-3-initial-wrapper {
+  display: flex;
+  position: absolute;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transition: left 150ms ease-in-out;
+}
+.item-3-initial-wrapper-focused {
+  left: calc(2 * 100% / 3);
+}
+.item-3-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 3);
+}
+.item-3-image {
+  transform: scale(0.55);
+}
+.item-3-text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(2 * 100% / 3);
+}
+.item-3-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.5em;
+  padding-right: 15px;
+  width: 100%;
+  height: 100%;
+  color: #F8F9F0;
+}
+.item-3-subtext {
+  font-family: 'Jost', sans-serif;
+  font-size: 1em;
+  color: #F8F9F0;
+}
+@media (min-width: 360px) {
+  .item-3-text {
+    font-size: 2em;
+    padding-right: 20px;
+  }
+  .item-3-subtext {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 440px) {
+  .item-3-text {
+    font-size: 2.2em;
+    padding-right: 30px;
+  }
+  .item-3-subtext {
+    font-size: 2em;
+  }
+}
+@media (min-width: 1024px) {
+  .item-3-image {
+   transform: scale(0.65);
+  }
+  .item-3-text {
+    font-size: 2.7em;
+    padding-right: 45px;
+  }
+  .item-3-subtext {
+    font-size: 2.3em;
+  }
+}
+@media (min-width: 1440px) {
+  .item-3-text {
+    font-size: 3.5em;
+    padding-right: 55px;
+  }
+  .item-3-subtext {
+    font-size: 3em;
+  }
+}

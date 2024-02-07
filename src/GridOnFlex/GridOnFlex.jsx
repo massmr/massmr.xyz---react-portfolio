@@ -14,7 +14,8 @@ import './GridOnFlexActiveTransition.css';
 import { GridItem } from './GridItem/GridItem.jsx';
 
 //import items components 
-import { Item1 } from './Items/Item1.jsx'
+import { Item1 } from './Items/Item1.jsx';
+import { Item3 } from './Items/Item3.jsx';
 import { Item4 } from './Items/Item4.jsx';
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
 import { Item6 } from './Items/Item6.jsx';
@@ -151,9 +152,8 @@ export const Grid = ({ openModale, isGridActive }) => {
         <div className={`grid-lvl-2 lvl-2-top-bottom item-3-container ${gridActive3 ? 'item-active' : ''}`}>
 
           <GridItem className="item-3"
-            gridActive={gridActive3}
-            openModale={openModale}>
-
+            gridActive={gridActive3}>
+            <Item3 />
           </GridItem>
 
         </div>
