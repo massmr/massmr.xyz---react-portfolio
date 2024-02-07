@@ -2,16 +2,18 @@ import './GridItem.css';
 
 export const GridItem = ({ 
   children, 
-  openModale }) => {
+  openModale,
+  setActive }) => {
   
-  const handleOpenModale = () => {
+  const handleClick = () => {
     openModale();
+    setActive();
   };
 
   return (
     <div
       className="grid-item"
-      onClick={handleOpenModale}
+      onClick={handleClick}
       style={{
         borderRadius: '12px',
         width: '100%',

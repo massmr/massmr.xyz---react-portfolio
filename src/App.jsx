@@ -46,7 +46,8 @@ const App = () => {
   const handleModaleClose = () => {
     setIsModaleVisible(false);
   };
-
+  
+ 
   return(
     <>
       <SpeedInsights />

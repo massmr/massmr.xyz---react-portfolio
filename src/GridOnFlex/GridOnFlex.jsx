@@ -1,8 +1,6 @@
 //The entire grid is coded from this components
 //It is done with flexbox, applied to several layers of divs
 //The item construction begins at <GridItem> components and their children
-//GridItem is defined as a reusable components
-
 //import packages
 import { useState, useEffect, useRef } from 'react'
 
@@ -12,6 +10,7 @@ import './GridOnFlexActiveTransition.css'
 
 //import components 
 import { GridItem } from './GridItem/GridItem.jsx'
+import  useActivation from '../CustomHooks/useActivation.jsx'
 
 //import items components 
 import { Item1 } from './Items/Item1.jsx'
@@ -27,6 +26,10 @@ import { Item8 } from './Items/Item8.jsx'
 import resumeIcon from "./assets/resume-icon.png"
 
 export const Grid = ({ openModale, isGridActive }) => {
+
+  //Grid entrance animation
+  //2 versions : mobile or desktop
+  
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleWindowResize = () => {
@@ -126,6 +129,74 @@ export const Grid = ({ openModale, isGridActive }) => {
     }
   }, [isGridActive]);
 
+  //_______________________________________________________
+  //custom hook to check activation of an Item and blur
+  //all others
+  
+  const isAnyItemActive = (...activationStates) => {
+    return activationStates.some(isActive => isActive);
+  };
+
+  const [
+    isItem1Active,
+    handleItem1Activation,
+    handleItem1Deactivation
+  ] = useActivation(false);
+  const [
+    isItem2Active,
+    handleItem2Activation,
+    handleItem2Deactivation
+  ] = useActivation(false);
+  const [
+    isItem3Active,
+    handleItem3Activation,
+    handleItem3Deactivation
+  ] = useActivation(false);
+  const [
+    isItem4Active,
+    handleItem4Activation,
+    handleItem4Deactivation
+  ] = useActivation(false);
+  const [
+    isItem5Active,
+    handleItem5Activation,
+    handleItem5Deactivation
+  ] = useActivation(false);
+  const [
+    isItem6Active,
+    handleItem6Activation,
+    handleItem6Deactivation
+  ] = useActivation(false);
+  const [
+    isItem7Active,
+    handleItem7Activation,
+    handleItem7Deactivation
+  ] = useActivation(false);
+  
+  const [isBlurred, setIsBlurred] = useState(false);
+
+  useEffect(() => {
+    setIsBlurred(isAnyItemActive(
+      isItem1Active,
+      isItem2Active,
+      isItem3Active,
+      isItem4Active,
+      isItem5Active,
+      isItem6Active,
+      isItem7Active
+    ));
+    }, [
+        isItem1Active,
+        isItem2Active,
+        isItem3Active,
+        isItem4Active,
+        isItem5Active,
+        isItem6Active,
+        isItem7Active
+  ]);
+
+  console.log(isBlurred);
+
   return (
     <section className="grid-wrapper">
     <div className="grid-container">
@@ -135,7 +206,8 @@ export const Grid = ({ openModale, isGridActive }) => {
 
             <GridItem className="item-1"
               gridActive={gridActive1}
-              openModale={openModale}>
+              openModale={openModale}
+              setActive={handleItem1Activation}>
               <Item1 />
             </GridItem>
 
@@ -144,7 +216,8 @@ export const Grid = ({ openModale, isGridActive }) => {
 
             <GridItem className="item-2"
               gridActive={gridActive2}
-              openModale={openModale}>
+              openModale={openModale}
+              setActive={handleItem1Activation}>
               <Item2 />
             </GridItem>
 
@@ -153,7 +226,8 @@ export const Grid = ({ openModale, isGridActive }) => {
         <div className={`grid-lvl-2 lvl-2-top-bottom item-3-container ${gridActive3 ? 'item-active' : ''}`}>
 
           <GridItem className="item-3"
-            gridActive={gridActive3}>
+            gridActive={gridActive3}
+            setActive={handleItem1Activation}>
             <Item3 />
           </GridItem>
 
@@ -165,7 +239,8 @@ export const Grid = ({ openModale, isGridActive }) => {
 
             <GridItem className="item-4"
               gridActive={gridActive4}
-              openModale={openModale}>
+              openModale={openModale}
+              setActive={handleItem1Activation}>
               <Item4 />
             </GridItem>
 
@@ -176,7 +251,8 @@ export const Grid = ({ openModale, isGridActive }) => {
 
                 <GridItem className="item-5"
                   gridActive={gridActive5}
-                  openModale={() => openModale(Item5ModaleContent)}>
+                  openModale={() => openModale(Item5ModaleContent)}
+                  setActive={handleItem1Activation}>
                   <Item5 />
                 </GridItem>
 
@@ -184,7 +260,8 @@ export const Grid = ({ openModale, isGridActive }) => {
               <div className={`grid-lvl-5 item-6-container ${gridActive6 ? 'item-active' : ''}`}>
 
                 <GridItem className="item-6" 
-                  gridActive={gridActive6}>
+                  gridActive={gridActive6}
+                  setActive={handleItem1Activation}>
                   <Item6 />
                 </GridItem>
 
@@ -194,7 +271,8 @@ export const Grid = ({ openModale, isGridActive }) => {
 
               <GridItem className="item-7"
                 gridActive={gridActive7}
-                openModale={openModale}>
+                openModale={openModale}
+                setActive={handleItem1Activation}>
                 <Item7 />
               </GridItem>
 
