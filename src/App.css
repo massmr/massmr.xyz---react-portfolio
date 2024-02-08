@@ -16,3 +16,8 @@ font-family: 'Major Mono Display', monospace;
   background: rgb(102, 103, 166);
   background: linear-gradient(30deg, rgba(102, 103, 166, 1) 0%, rgba(46, 45, 66, 1) 100%);
 }
+@media (min-width: 440px) {
+  .body-background {
+    padding: 20px 50px 50px 50px;
+  }
+}
