@@ -29,6 +29,9 @@ const App = () => {
   const handleGridActivation = () => {
     setIsGridActive(true);
   }
+  const handleGridDeactivation = () => {
+    setIsGridActive(false);
+  }
 
   //modale logic : 
     //set modale visibility to true if child component is clicked
@@ -69,6 +72,7 @@ const App = () => {
         
         { isGridActive && (
           <Grid 
+            gridDeactivation={handleGridDeactivation}
             openModale={handleModaleOpen} 
             isGridActive={isGridActive} />       
         )}

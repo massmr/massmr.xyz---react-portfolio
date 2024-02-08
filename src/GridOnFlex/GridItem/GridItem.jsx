@@ -4,19 +4,26 @@ import './GridItem.css'
 export const GridItem = ({ 
   children, 
   name,
+  gridDeactivation = null,
   openModale = null,
   setActive,
   setDeactive,
   isActive,
   isBlurred }) => {
   
+  const handleGridClose = () => {
+    gridDeactivation();
+  }
+
   //on click on the item : 
     //-deploy the modale if there is one
     //-set active >> callback set isBlurred : true
     // >> will prevent blurred div to render
   const handleOnClick = () => {
-    openModale ? openModale() : '';
+    //if there is a modale, grid deactivation will be set to null
     setActive();
+    openModale ? openModale() : '';
+    gridDeactivation();
   };
   const handleOnBlur = () => {
     setDeactive();

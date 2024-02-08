@@ -25,7 +25,7 @@ import { Item8 } from './Items/Item8.jsx'
 //import assets
 import resumeIcon from "./assets/resume-icon.png"
 
-export const Grid = ({ openModale, isGridActive }) => {
+export const Grid = ({ gridDeactivation, openModale, isGridActive }) => {
 
   //Grid entrance animation
   //2 versions : mobile or desktop
@@ -221,8 +221,8 @@ export const Grid = ({ openModale, isGridActive }) => {
 
             <GridItem className="item-1"
               name="item1"
+              gridDeactivation={gridDeactivation}
               gridActive={gridActive1}
-              openModale={openModale}
               isBlurred={isBlurred}
               isActive={isItem1Active}
               setActive={handleItem1Activation}

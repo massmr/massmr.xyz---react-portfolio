@@ -18,6 +18,11 @@ font-family: 'Major Mono Display', monospace;
 }
 @media (min-width: 440px) {
   .body-background {
+    padding: 50px 50px 50px 50px;
+  }
+}
+@media (min-width: 1024px) {
+  .body-background {
     padding: 20px 50px 50px 50px;
   }
 }
