@@ -21,7 +21,17 @@ import './App.css';
 //import { LinkItem } from './Grid/LinkItem/LinkItem.jsx';
 
 const App = () => {
- 
+  //Home page logic: 
+  const [isHomePage, setIsHomePage] = useState(true);
+
+  const handleCloseHomePage = () => {
+    setIsHomePage(false);
+  }
+  const handleOpenHomePage = () => {
+    setIsHomePage(false);
+  }
+  
+  console.log(isHomePage);
   //Grid logic : 
   //Go from home menu to bento grid
   const [isGridActive, setIsGridActive] = useState(false);
@@ -32,6 +42,12 @@ const App = () => {
   const handleGridDeactivation = () => {
     setIsGridActive(false);
   }
+
+  //Close Home Page && Open grid : 
+  const handleQuitHomePage = () => {
+    handleCloseHomePage();
+    handleGridActivation();
+  } 
 
   //modale logic : 
     //set modale visibility to true if child component is clicked
@@ -66,8 +82,8 @@ const App = () => {
         
         <Banner isGridActive={isGridActive} />
         
-        { !isGridActive && (
-          <HomePage deployGrid={handleGridActivation} />
+        { isHomePage && !isGridActive && (
+          <HomePage deployGrid={handleQuitHomePage} />
         )}
         
         { isGridActive && (
