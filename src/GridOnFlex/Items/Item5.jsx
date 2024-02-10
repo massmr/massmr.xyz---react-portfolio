@@ -23,7 +23,7 @@ export const Item5 = () => {
 export const Item5ModaleContent = () => (
   <div className="item-5-modale-wrapper">
     <div className="item-5-modale-content">
-      <a href="https:github.com/massmr"
+      <a href="https://github.com/massmr"
         target="_blank">
         <LinkItem
           className="modale-link-item"
