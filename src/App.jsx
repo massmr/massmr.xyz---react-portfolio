@@ -31,16 +31,20 @@ const App = () => {
     setIsHomePage(false);
   }
   
-  console.log(isHomePage);
   //Grid logic : 
   //Go from home menu to bento grid
   const [isGridActive, setIsGridActive] = useState(false);
+  const [isGridClosing, setIsGridClosing] = useState(false);
 
   const handleGridActivation = () => {
     setIsGridActive(true);
   }
   const handleGridDeactivation = () => {
-    setIsGridActive(false);
+    setIsGridClosing(true);
+    setTimeout(() => {
+      setIsGridActive(false);
+      setIsGridClosing(false);
+    }, 500);
   }
 
   //Close Home Page && Open grid : 
@@ -89,6 +93,7 @@ const App = () => {
         { isGridActive && (
           <Grid 
             gridDeactivation={handleGridDeactivation}
+            gridCloseAnimation={isGridClosing}
             openModale={handleModaleOpen} 
             isGridActive={isGridActive} />       
         )}

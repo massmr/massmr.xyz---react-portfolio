@@ -25,7 +25,11 @@ import { Item8 } from './Items/Item8.jsx'
 //import assets
 import resumeIcon from "./assets/resume-icon.png"
 
-export const Grid = ({ gridDeactivation, openModale, isGridActive }) => {
+export const Grid = ({ 
+  gridDeactivation,
+  openModale,
+  isGridActive,
+  gridCloseAnimation }) => {
 
   //Grid entrance animation
   //2 versions : mobile or desktop
@@ -128,7 +132,22 @@ export const Grid = ({ gridDeactivation, openModale, isGridActive }) => {
       }
     }
   }, [isGridActive]);
+  
+  console.log("grid close: " + gridCloseAnimation);
 
+  //handle closing animation
+  useEffect(() => {
+    if (gridCloseAnimation) {
+      setGridActive1(false)
+      setGridActive2(false)
+      setGridActive3(false)
+      setGridActive4(false)
+      setGridActive5(false)
+      setGridActive6(false)
+      setGridActive7(false)
+      setGridActive8(false)
+    }
+  }, [gridCloseAnimation]);
   //_______________________________________________________
   //custom hook to check activation of an Item and blur
   //all others
