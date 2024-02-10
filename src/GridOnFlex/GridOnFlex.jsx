@@ -14,6 +14,7 @@ import  useActivation from '../CustomHooks/useActivation.jsx'
 
 //import items components 
 import { Item1 } from './Items/Item1.jsx'
+import { Item1PageContent } from './Items/Item1.jsx'
 import { Item2 } from './Items/Item2.jsx'
 import { Item3 } from './Items/Item3.jsx'
 import { Item4 } from './Items/Item4.jsx'
@@ -26,7 +27,7 @@ import { Item8 } from './Items/Item8.jsx'
 import resumeIcon from "./assets/resume-icon.png"
 
 export const Grid = ({ 
-  gridDeactivation,
+  openItemPage,
   openModale,
   isGridActive,
   gridCloseAnimation }) => {
@@ -133,8 +134,6 @@ export const Grid = ({
     }
   }, [isGridActive]);
   
-  console.log("grid close: " + gridCloseAnimation);
-
   //handle closing animation
   useEffect(() => {
     if (gridCloseAnimation) {
@@ -240,7 +239,7 @@ export const Grid = ({
 
             <GridItem className="item-1"
               name="item1"
-              gridDeactivation={gridDeactivation}
+              openItemPage={() => openItemPage(Item1PageContent)}
               gridActive={gridActive1}
               isBlurred={isBlurred}
               isActive={isItem1Active}

@@ -4,7 +4,7 @@ import './GridItem.css'
 export const GridItem = ({ 
   children, 
   name,
-  gridDeactivation = null,
+  openItemPage = null,
   openModale = null,
   setActive,
   setDeactive,
@@ -23,7 +23,7 @@ export const GridItem = ({
     //if there is a modale, grid deactivation will be set to null
     setActive();
     openModale ? openModale() : '';
-    gridDeactivation();
+    openItemPage();
   };
   const handleOnBlur = () => {
     setDeactive();

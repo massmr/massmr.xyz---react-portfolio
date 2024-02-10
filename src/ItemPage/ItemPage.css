@@ -1,0 +1,17 @@
+.item-page {
+  height: 100svh;
+  width: 100%;
+  max-width: 450px;
+
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+.item-page-active {
+  opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .item-page {
+    max-width: 1440px;
+  }
+)

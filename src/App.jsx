@@ -11,14 +11,10 @@ import { Banner } from './Banner/Banner.jsx';
 import { Grid } from './GridOnFlex/GridOnFlex.jsx';
 import { Modale } from './LayoutsComponents/Modal/Modal.jsx';
 import { HomePage } from './HomePage/HomePage.jsx';
-
-
+import { ItemPage } from './ItemPage/ItemPage.jsx';
 
 //import styles 
 import './App.css';
-
-//import components displayed by modale :
-//import { LinkItem } from './Grid/LinkItem/LinkItem.jsx';
 
 const App = () => {
   //Home page logic: 
@@ -33,18 +29,32 @@ const App = () => {
   
   //Grid logic : 
   //Go from home menu to bento grid
+  //launch grid activation
   const [isGridActive, setIsGridActive] = useState(false);
+  //launch grid closing animation
   const [isGridClosing, setIsGridClosing] = useState(false);
 
   const handleGridActivation = () => {
     setIsGridActive(true);
   }
-  const handleGridDeactivation = () => {
+  
+  //Item Page logic :
+    //Go from grid to ItemPage
+      //1-grid close animation
+      //2-deactivate grid
+      //3-deploy itempage
+  const [isItemPageActive, setIsItemPageActive] = useState(false);
+
+  const [isItemPageContent, setIsItemPageContent] = useState();
+
+  const handleOpenItemPage = (content) => {
     setIsGridClosing(true);
     setTimeout(() => {
       setIsGridActive(false);
       setIsGridClosing(false);
+      setIsItemPageActive(true);
     }, 500);
+    setIsItemPageContent(content)
   }
 
   //Close Home Page && Open grid : 
@@ -69,7 +79,6 @@ const App = () => {
   const handleModaleClose = () => {
     setIsModaleVisible(false);
   };
-  
  
   return(
     <>
@@ -83,16 +92,23 @@ const App = () => {
             {isModaleContent}
           </Modale>
         )}
-        
+
         <Banner isGridActive={isGridActive} />
         
+        { isItemPageActive && (
+          <ItemPage isItemPageActive={isItemPageActive}>
+          {isItemPageContent}
+          </ItemPage>
+        )}
+        
+
         { isHomePage && !isGridActive && (
           <HomePage deployGrid={handleQuitHomePage} />
         )}
         
         { isGridActive && (
           <Grid 
-            gridDeactivation={handleGridDeactivation}
+            openItemPage={handleOpenItemPage}
             gridCloseAnimation={isGridClosing}
             openModale={handleModaleOpen} 
             isGridActive={isGridActive} />       
