@@ -10,11 +10,11 @@ export const ImagesContainer = ({ source, name }) => {
 };
 
 export const ProjectImage = ({ source }) => {
-  const style = {
-    objectFit: 'cover',
-  };
-
+  
   return(
-    <img style={style} src={source} alt="Project"></img>
+    <img
+      className="item-img"
+      src={source} 
+      alt="Project"></img>
   );
 };

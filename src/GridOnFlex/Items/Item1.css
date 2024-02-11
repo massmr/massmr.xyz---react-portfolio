@@ -12,9 +12,133 @@
   font-family: 'Jost', sans-serif;
   letter-spacing: 2px;
 }
+.item-1-page {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  /*must set height dynamically*/
+  height: calc(100svh - 193px);
+  width: 100%;
+}
+.project-selector {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 
+  position: absolute;
+  overflow: hidden;
+  min-height: 60px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid #F8F9FA;
+  border-radius: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+  
+  height: 60px;
+  backdrop-filter: blur(0);
+  background-color: transparent;
+  box-shadow: none;
+  transition: bacdrop-filter 150ms ease, height 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+.project-selector-active {
+  backdrop-filter: blur(4px);
+  height: auto;
+  background-color: rgba(0,0,0,0.25);
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
+}
+.project-name-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
+}
+.project-name {
+  display: flex;
+  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
+}
+.project-h1 {
+  display: flex;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  color: #F8F9FA;
+  height: 100%;
+  padding: 12px 0;
+  transition: color 150ms ease
+}
+.project-h1-active {
+}
+.project-icon-container {
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+  width: 100%
+}
+.project-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+}
+.project-icon {
+  color: #F8F9FA;
+  width: 25px;
+  height: 25px;
+  transition: transform 150ms ease;
+}
+.project-icon-active {
+  transform: rotate(180deg);
+}
+
+.item-1-content-wrapper {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  flex: 1;
+}
+.project-card {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: calc(100% - 80px);
+  overflow: hidden;
+  border-radius: 20px;
+ }
+.project-images {
+  width: 100%;
+  height: 100%;
+}
+.project-description {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: #6C69F0;
+}
+@media(min-width: 390px) {
+  .item-1-page {
+    height: calc(100svh - 133px);
+  }
+}
+@media (min-width: 440px) {
+  .item-1-page {
+    height: calc(100svh - 193px);
+  }
+}
+@media (min-width: 530px) {
+  .item-1-page {
+    height: calc(100svh - 213px);
+  }
+}
 @media (min-width: 1024px) {
   .item-1-button {
     transform: translateX(-50%) translateY(-50%) scale(1.5);
+  }
+  .item-1-page {
   }
 }

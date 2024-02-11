@@ -13,8 +13,7 @@ import { GridItem } from './GridItem/GridItem.jsx'
 import  useActivation from '../CustomHooks/useActivation.jsx'
 
 //import items components 
-import { Item1 } from './Items/Item1.jsx'
-import { Item1PageContent } from './Items/Item1.jsx'
+import { Item1, Item1PageContent } from './Items/Item1.jsx'
 import { Item2 } from './Items/Item2.jsx'
 import { Item3 } from './Items/Item3.jsx'
 import { Item4 } from './Items/Item4.jsx'
@@ -229,6 +228,16 @@ export const Grid = ({
     console.log("is active 7 : " + isItem7Active);
   }, [isBlurred, isItem1Active, isItem2Active, isItem3Active, isItem4Active, isItem5Active, isItem6Active, isItem7Active]);
   */
+
+  //declare names for ItemPages : 
+  const itemName1 = "item-1";
+  const itemName2 = "item-2";
+  const itemName3 = "item-3";
+  const itemName4 = "item-4";
+  const itemName5 = "item-5";
+  const itemName6 = "item-6";
+  const itemName7 = "item-7";
+  const itemName8 = "item-8";
   
   return (
     <section className="grid-wrapper">
@@ -239,7 +248,7 @@ export const Grid = ({
 
             <GridItem className="item-1"
               name="item1"
-              openItemPage={() => openItemPage(Item1PageContent)}
+              openItemPage={() => openItemPage(Item1PageContent, itemName1)}
               gridActive={gridActive1}
               isBlurred={isBlurred}
               isActive={isItem1Active}
@@ -253,6 +262,7 @@ export const Grid = ({
 
             <GridItem className="item-2"
               name="item2"
+              openItemPage={() => openItemPage(Item1PageContent, itemName2)}
               gridActive={gridActive2}
               isBlurred={isBlurred}
               isActive={isItem2Active}

@@ -1,13 +1,19 @@
-import { useState, useEffect } from 'react';
+import React from 'react'
+import { useState, useEffect } from 'react'
 import './ItemPage.css'
 
+import { Item1PageContent } from '../../GridOnFlex/Items/Item1.jsx'
+
 export const ItemPage = ({ 
-  name = null,
+  name,
   isItemPageActive,
-  children }) => {
+  }) => {
 
+  //launch the opacity animation :
+    //1-comp is activated from parent (Aoo) with isItemPageActive
+    //2-if isItemPageActive cahgnes && true : launch animation
   const [isItemPageVisible, setIsItemPageVisible] = useState(false);
-
+  
   useEffect(() => {
     if (isItemPageActive) {
       const timeoutId = setTimeout(() => {
@@ -18,11 +24,13 @@ export const ItemPage = ({
     }
   }, [isItemPageActive]);
   
-  console.log("itempage " + isItemPageActive);
-
-  return (
+  return (  
     <div className={`item-page ${name ? 'item-page-' + name : '' } ${isItemPageVisible ? 'item-page-active' : ''}`}>
-      {children}
+    
+      {(name === "item-1") && (
+        <Item1PageContent name={name} />
+      )}
+    
     </div>
   )
 }
