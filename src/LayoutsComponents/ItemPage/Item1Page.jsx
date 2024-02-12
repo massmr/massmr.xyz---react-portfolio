@@ -83,7 +83,6 @@ const ProjectCard = ({ projectNameDisplayed }) => {
     setProjectName(projectNameDisplayed);
   }, [projectNameDisplayed]);
 
-  console.log(projectName);
   return (
     <>
       <div className="project-card">
