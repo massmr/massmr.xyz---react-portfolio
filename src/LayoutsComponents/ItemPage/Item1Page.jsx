@@ -15,101 +15,83 @@ import MDPortrait from '../../Utils/assets/img/FM20.jpg'
 
 //import components
 import { RegularList } from '../RegularList/RegularList.jsx'
-import { ProjectNameListItem } from '../Projects/ProjectListItem.jsx'
+import { ProjectSelectorListItem } from '../Projects/ProjectSelectorListItem.jsx'
+import { ProjectCardListItem } from '../Projects/ProjectCardListItem.jsx'
 
 //integrate db fetching
 import { projects } from '../../Utils/projects.js'
 
+//Components
+//_____________________________________________________________
+
 export const Item1PageContent = ({ name }) => {
-  const [isSelected, setIsSelected] = useState(false);
-  
-  const handleSelectorToggle = () => {
-    setIsSelected((prev) => !prev)
+   
+  const [projectNameDisplayed, setProjectNameDisplayed] = useState(projects[0].name);
+
+  const handleProjectDisplay = (projectName) => {
+    setProjectNameDisplayed(projectName);
   }
   
   return (
     <div className="item-1-page">
-      <div
-        tabIndex={0}
-        onClick={handleSelectorToggle}
-        className={`project-selector ${isSelected ? 'project-selector-active' : '' }`}>
-
-        <div className="project-name-wrapper">
+      
+      <ProjectSelector handleProjectDisplay={handleProjectDisplay} />
     
-          <RegularList 
-            items={projects}
-            resourceName="project"
-            ItemComponent={ProjectNameListItem} />         
-
-        </div>
-    
-        <div className="project-icon-container">
-          <div className="project-icon-wrapper">
-            <FontAwesomeIcon className={`project-icon ${isSelected ? 'project-icon-active' : '' }`} icon="fa-solid fa-chevron-down" />
-          </div>
-        </div>
-      </div>
-
       <div className="item-1-spacer"></div>
     
-      <ProjectCard />
+      <ProjectCard projectNameDisplayed={projectNameDisplayed} />
 
     </div>
   );    
 };
 
-export const ProjectCard = () => {
-  const [isImagesDisplay, setIsImagesDisplay] = useState(true);
-  const [isDescriptionDisplay, setIsDescriptionDisplay] = useState(false);
-  const [isWidthDescription, setIsWidthDescription] = useState(true);
+const ProjectSelector = ({ handleProjectDisplay }) => {
 
-  const handleImageToggle = () => {
-    setIsImagesDisplay((prev) => !prev);
-  }
-  const handleDescriptionToggle = () => {
-    setIsDescriptionDisplay((prev) => !prev); 
-  }
-  const handleWidthDescriptionToggle = () => {
-    setIsWidthDescription((prev) => !prev);
-  }
+  const [isSelectorFocus, setIsSelectorFocus] = useState(false);
   
-  const handleClick = () => {
-    if (isImagesDisplay) {
-      handleImageToggle();
-      handleWidthDescriptionToggle();
-      const timeoutId = setTimeout(() => {
-        handleDescriptionToggle();
-      }, 175);
+  const handleSelectorToggle = () => {
+    setIsSelectorFocus((prev) => !prev)
+  }
 
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    } else {
-      handleDescriptionToggle();
-      const timeoutId = setTimeout(() => {
-        handleImageToggle();
-        handleWidthDescriptionToggle();
-      }, 175);
+  return (
+    <div
+      tabIndex={0}
+      onClick={handleSelectorToggle}
+      className={`project-selector ${isSelectorFocus ? 'project-selector-active' : '' }`}>
 
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-  };
+      <div className="project-name-wrapper">
+        <RegularList 
+          items={projects}
+          resourceName="project"
+          ItemComponent={ProjectSelectorListItem}
+          optionalProp1={handleProjectDisplay} />         
+      </div>
+    
+      <div className="project-icon-container">
+        <div className="project-icon-wrapper">
+          <FontAwesomeIcon className={`project-icon ${isSelectorFocus ? 'project-icon-active' : '' }`} icon="fa-solid fa-chevron-down" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
+const ProjectCard = ({ projectNameDisplayed }) => {
+  const [projectName, setProjectName] = useState(projectNameDisplayed);
+
+  useEffect(() => {
+    setProjectName(projectNameDisplayed);
+  }, [projectNameDisplayed]);
+
+  console.log(projectName);
   return (
     <>
       <div className="project-card">
-    
-        <div 
-          onClick={handleClick}
-          className={`project-card-item project-image ${ isImagesDisplay ? 'project-images-active' : 'project-images-not-active' }`}>
-      </div>
-
-        <div 
-          onClick={handleClick}
-          className={`project-card-item project-description ${ isDescriptionDisplay ? 'project-description-active' : 'project-description-not-active'} ${isWidthDescription ? 'project-description-reset-width' : ''}`}>
-        </div>
+        <RegularList 
+          items={projects}
+          resourceName="project"
+          ItemComponent={ProjectCardListItem} 
+          optionalProp1={projectName} />         
       </div>
     </>
   );

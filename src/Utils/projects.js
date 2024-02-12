@@ -5,14 +5,17 @@ export const projects = [
     images: [
       {
         name: "image-1",
+        alt: "portrait 1",
         url: './assets/img/fm20.jpg',
       },
       {
         name: "image-2",
+        alt: "portrait 2",
         url: './assets/img/imgp4514-modifier.jpg',
       },
       {
         name: "image-3",
+        alt: "portrait 3",
         url: './assets/img/FM21.jpg',
       }
     ]
@@ -20,5 +23,23 @@ export const projects = [
   {
     name: "oh my food",
     description: "lorem ipsum",
+    images: [
+      {
+        name: "image-1",
+        alt: "food 1",
+        url: './assets/img/fm20.jpg',
+      },
+      {
+        name: "image-2",
+        alt: "food 2",
+        url: './assets/img/imgp4514-modifier.jpg',
+      },
+      {
+        name: "image-3",
+        alt: "food 3",
+        url: './assets/img/FM21.jpg',
+      }
+    ]
+
   },
 ]
