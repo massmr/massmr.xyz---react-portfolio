@@ -6,6 +6,13 @@
   height: calc(100svh - 193px);
   width: 100%;
 }
+/*PROJECT SELECTOR && its spacer*/
+.item-1-spacer {
+  width: 100%;
+  height: 100px;
+  position: relative;
+  z-index: -1;
+}
 .project-selector {
   display: flex;
   flex-flow: row nowrap;
@@ -13,6 +20,7 @@
   align-items: center;
 
   position: absolute;
+  z-index: 10;
   overflow: hidden;
   min-height: 60px;
   width: 100%;
@@ -26,25 +34,24 @@
   backdrop-filter: blur(0);
   background-color: transparent;
   box-shadow: none;
-  transition: bacdrop-filter 150ms ease, height 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+  transition: backdrop-filter 150ms ease, height 250ms ease, background-color 250ms ease, box-shadow 250ms ease;
 }
 .project-selector-active {
   backdrop-filter: blur(4px);
   height: auto;
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0,0,0,0.30);
   box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
 }
 .project-name-wrapper {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 15px;
   height: 100%;
 }
 .project-name {
   display: flex;
   flex-shrink: 0;
-  height: 100%;
+  height: 60px;
   width: 100%;
 }
 .project-h1 {
@@ -53,7 +60,6 @@
   font-family: 'Jost', sans-serif;
   color: #F8F9FA;
   height: 100%;
-  padding: 12px 0;
   transition: color 150ms ease
 }
 .project-h1-active {
@@ -75,38 +81,49 @@
   color: #F8F9FA;
   width: 25px;
   height: 25px;
-  transition: transform 150ms ease;
+  transition: transform 300ms ease;
 }
 .project-icon-active {
   transform: rotate(180deg);
 }
 
-.item-1-content-wrapper {
-  display: flex;
-  align-items: flex-end;
-  width: 100%;
-  flex: 1;
-}
+/*PROJECT CARDS*/
 .project-card {
   display: flex;
-  flex-flow: row nowrap;
   width: 100%;
-  height: calc(100% - 80px);
-  overflow: hidden;
-  border-radius: 20px;
- }
- .project-card-item {
-   width: 100%;
- }
-.project-images {
   height: 100%;
+  overflow: hidden;
+
+  border-radius: 20px;
+}
+.project-card-item {
+  box-sizing: border-box;
+  height: 100%;
+  border-radius: 20px;
+}
+.project-image {
+  transition: width 200ms ease;
+  background-color: red;
+}
+.project-images-active {
+  width: 200%;
+}
+.project-images-not-active {
+  width: 0%;
 }
 .project-description {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
+  transition: transform 200ms ease;
   background: #6C69F0;
+  width: 100%;
+}
+.project-description-active {
+  transform: translateX(0%);
+}
+.project-description-not-active {
+  transform: translateX(100%);
+}
+.project-description-reset-width {
+  width: 0% !important; 
 }
 @media(min-width: 390px) {
   .item-1-page {

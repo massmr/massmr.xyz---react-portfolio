@@ -1,5 +1,5 @@
-export const ProjectListItem = ({ project }) => {
-  const { name, description } = project;
+export const ProjectNameListItem = ({ project }) => {
+  const { name } = project;
 
   return (
     <div className="project-name">

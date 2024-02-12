@@ -1,5 +1,5 @@
 //import packages
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 //import styles 
 import './Item1Page.css'
@@ -15,7 +15,7 @@ import MDPortrait from '../../Utils/assets/img/FM20.jpg'
 
 //import components
 import { RegularList } from '../RegularList/RegularList.jsx'
-import { ProjectListItem } from '../Projects/ProjectListItem.jsx'
+import { ProjectNameListItem } from '../Projects/ProjectListItem.jsx'
 
 //integrate db fetching
 import { projects } from '../../Utils/projects.js'
@@ -39,7 +39,7 @@ export const Item1PageContent = ({ name }) => {
           <RegularList 
             items={projects}
             resourceName="project"
-            ItemComponent={ProjectListItem} />         
+            ItemComponent={ProjectNameListItem} />         
 
         </div>
     
@@ -50,23 +50,65 @@ export const Item1PageContent = ({ name }) => {
         </div>
       </div>
 
-      <div className="item-1-content-wrapper">
-        <ProjectCard />
-      </div>
+      <div className="item-1-spacer"></div>
+    
+      <ProjectCard />
+
     </div>
   );    
 };
 
 export const ProjectCard = () => {
+  const [isImagesDisplay, setIsImagesDisplay] = useState(true);
+  const [isDescriptionDisplay, setIsDescriptionDisplay] = useState(false);
+  const [isWidthDescription, setIsWidthDescription] = useState(true);
+
+  const handleImageToggle = () => {
+    setIsImagesDisplay((prev) => !prev);
+  }
+  const handleDescriptionToggle = () => {
+    setIsDescriptionDisplay((prev) => !prev); 
+  }
+  const handleWidthDescriptionToggle = () => {
+    setIsWidthDescription((prev) => !prev);
+  }
+  
+  const handleClick = () => {
+    if (isImagesDisplay) {
+      handleImageToggle();
+      handleWidthDescriptionToggle();
+      const timeoutId = setTimeout(() => {
+        handleDescriptionToggle();
+      }, 175);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    } else {
+      handleDescriptionToggle();
+      const timeoutId = setTimeout(() => {
+        handleImageToggle();
+        handleWidthDescriptionToggle();
+      }, 175);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  };
+
   return (
     <>
       <div className="project-card">
     
-        <div className="project-card-item project-images">
-          <img src={MDPortrait} />
-        </div>
-        <div className="project-card-item project-description">
-      
+        <div 
+          onClick={handleClick}
+          className={`project-card-item project-image ${ isImagesDisplay ? 'project-images-active' : 'project-images-not-active' }`}>
+      </div>
+
+        <div 
+          onClick={handleClick}
+          className={`project-card-item project-description ${ isDescriptionDisplay ? 'project-description-active' : 'project-description-not-active'} ${isWidthDescription ? 'project-description-reset-width' : ''}`}>
         </div>
       </div>
     </>
