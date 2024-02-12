@@ -75,4 +75,16 @@
 }
 .project-description-subtitle {
   font-size: 18px;
+  text-align: justify;
+}
+.project-description-anchor-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.project-description-anchor {
+  color: #F8F9F0;
+  width: 28px;
+  height: 28px;
 }

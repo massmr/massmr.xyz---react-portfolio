@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react'
 import './ProjectCardListItem.css' 
 
+//import icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+library.add({ faArrowUpRightFromSquare })
+
 //images
 import mi1 from '../../Utils/assets/img/FM20.jpg'
 import mi2 from '../../Utils/assets/img/IMGP4514-Modifier.jpg'
@@ -15,30 +21,9 @@ export const ProjectCardListItem = ({
   project, 
   optionalProp1,
   }) => {
-  //here, optional is the project to actually selected
-   
-  const { name, images, description } = project;
+  //here, optionalProp1 is the project to actually selected
+  const { name, images, description, url } = project;
   
-  //image selection
-  const [count, setCount] = useState(1);
-  
-  //reset count 
-  useEffect(() => {
-    setCount(1);
-  }, [optionalProp1])
-
-  //carrousel in loop if 3 images
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      (count < 3) ? setCount(count + 1) : setCount(1);
-    }, 4000)
-
-    return () => clearTimeout(timeoutId);
-  }, [count]);
-
-  const selectedIdentifier = optionalProp1.slice(0, 2) + count.toString();
-  const selectedImage = imageMap[selectedIdentifier]; 
-
   //trigger the cards animation
   const [isImagesDisplay, setIsImagesDisplay] = useState(true);
   const [isDescriptionDisplay, setIsDescriptionDisplay] = useState(false);
@@ -78,6 +63,26 @@ export const ProjectCardListItem = ({
     }
   };
 
+  //image selection
+  const [count, setCount] = useState(1);
+  
+  //reset count 
+  useEffect(() => {
+    setCount(1);
+  }, [optionalProp1, isImagesDisplay])
+
+  //carrousel in loop if 3 images
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      (count < 3) ? setCount(count + 1) : setCount(1);
+    }, 4000)
+
+    return () => clearTimeout(timeoutId);
+  }, [count]);
+
+  const selectedIdentifier = optionalProp1.slice(0, 2) + count.toString();
+  const selectedImage = imageMap[selectedIdentifier]; 
+
   //To do : integrate callback, to detect which project is selected
   return(
     <>
@@ -92,13 +97,20 @@ export const ProjectCardListItem = ({
             <button
               onClick={handleClick}
               className="project-button project-image-button">
-              Read more
+              Show more
             </button>
           </div>
     
           <div 
             className={`project-card-item project-description ${ isDescriptionDisplay ? 'project-description-active' : 'project-description-not-active'} ${isWidthDescription ? 'project-description-reset-width' : ''}`}>
-            <h1 className="project-description-title">{name}</h1>
+            <div className="project-description-anchor-wrapper">
+              <h1 className="project-description-title">{name}</h1>
+              <a href={url} target="_blank">
+                <FontAwesomeIcon 
+                  className="project-description-anchor" 
+                  icon="fa-solid fa-arrow-up-right-from-square" />
+              </a>
+            </div>
             <p className="project-description-subtitle">{description}</p>
             <button
               onClick={handleClick}
