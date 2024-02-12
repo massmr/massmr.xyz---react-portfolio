@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   font-family: 'Major Mono Display', monospace;
-  font-size: 42px;
+  font-size: 40px;
   color: #F8F9FA;
 }
 .banner-text-wrapper {
@@ -22,13 +22,13 @@
 }
 .banner-subtitle {
    font-family: 'Major Mono Display', monospace;
-   font-size: 16px;
+   font-size: 15px;
    color: #F8F9FA;
-   margin: 5px 0 0 0;
+   margin: 
 }
 .banner-text {
   font-family: 'Jost', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: #F8F9FA;
   font-weight: 300;
   /*this margin is used to space banner and grid*/

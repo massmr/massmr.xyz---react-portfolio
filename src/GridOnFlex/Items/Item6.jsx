@@ -1,5 +1,5 @@
-import resumeIcon from '../assets/resume-icon.png';
-import './Item6.css';
+import resumeIcon from '../../Utils/assets/img/resume-icon.png'
+import './Item6.css'
 
 export const Item6 = () => (
   <>

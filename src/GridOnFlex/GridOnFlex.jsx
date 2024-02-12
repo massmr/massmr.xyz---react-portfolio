@@ -13,7 +13,8 @@ import { GridItem } from './GridItem/GridItem.jsx'
 import  useActivation from '../CustomHooks/useActivation.jsx'
 
 //import items components 
-import { Item1, Item1PageContent } from './Items/Item1.jsx'
+import { Item1 } from './Items/Item1.jsx'
+import { Item1PageContent } from '../LayoutsComponents/ItemPage/Item1Page.jsx'
 import { Item2 } from './Items/Item2.jsx'
 import { Item3 } from './Items/Item3.jsx'
 import { Item4 } from './Items/Item4.jsx'
@@ -23,7 +24,7 @@ import { Item7 } from './Items/Item7.jsx'
 import { Item8 } from './Items/Item8.jsx'
 
 //import assets
-import resumeIcon from "./assets/resume-icon.png"
+import resumeIcon from "../Utils/assets/img/resume-icon.png"
 
 export const Grid = ({ 
   openItemPage,
@@ -230,14 +231,14 @@ export const Grid = ({
   */
 
   //declare names for ItemPages : 
-  const itemName1 = "item-1";
-  const itemName2 = "item-2";
-  const itemName3 = "item-3";
-  const itemName4 = "item-4";
-  const itemName5 = "item-5";
-  const itemName6 = "item-6";
-  const itemName7 = "item-7";
-  const itemName8 = "item-8";
+  const itemName1 = "item1";
+  const itemName2 = "item2";
+  const itemName3 = "item3";
+  const itemName4 = "item4";
+  const itemName5 = "item5";
+  const itemName6 = "item6";
+  const itemName7 = "item7";
+  const itemName8 = "item8";
   
   return (
     <section className="grid-wrapper">
@@ -247,8 +248,8 @@ export const Grid = ({
           <div className={`grid-lvl-3 lvl-3-top-left item-1-container ${gridActive1 ? 'item-active' : ''}`}>
 
             <GridItem className="item-1"
-              name="item1"
-              openItemPage={() => openItemPage(Item1PageContent, itemName1)}
+              name={itemName1}
+              openItemPage={() => openItemPage(itemName1)}
               gridActive={gridActive1}
               isBlurred={isBlurred}
               isActive={isItem1Active}
@@ -261,7 +262,7 @@ export const Grid = ({
           <div className={`grid-lvl-3 lvl-3-top-right item-2-container ${gridActive2 ? 'item-active' : ''}`}>
 
             <GridItem className="item-2"
-              name="item2"
+              name={itemName2}
               openItemPage={() => openItemPage(Item1PageContent, itemName2)}
               gridActive={gridActive2}
               isBlurred={isBlurred}
@@ -276,7 +277,7 @@ export const Grid = ({
         <div className={`grid-lvl-2 lvl-2-top-bottom item-3-container ${gridActive3 ? 'item-active' : ''}`}>
 
           <GridItem className="item-3"
-            name="item3"
+            name={itemName3}
             gridActive={gridActive3}
             isBlurred={isBlurred}
             isActive={isItem3Active}
@@ -292,7 +293,7 @@ export const Grid = ({
           <div className={`grid-lvl-3 lvl-3-bottom-top item-4-container ${gridActive4 ? 'item-active' : ''}`}>
 
             <GridItem className="item-4"
-              name="item4"
+              name={itemName4}
               gridActive={gridActive4}
               isBlurred={isBlurred}
               isActive={isItem4Active}
@@ -307,7 +308,7 @@ export const Grid = ({
               <div className={`grid-lvl-5 item-5-container ${gridActive5 ? 'item-active' : ''}`}>
 
                 <GridItem className="item-5"
-                  name="item5"
+                  name={itemName5}
                   gridActive={gridActive5}
                   openModale={() => openModale(Item5ModaleContent)}
                   isBlurred={isBlurred}
@@ -321,7 +322,7 @@ export const Grid = ({
               <div className={`grid-lvl-5 item-6-container ${gridActive6 ? 'item-active' : ''}`}>
 
                 <GridItem className="item-6" 
-                  name="item6"
+                  name={itemName6}
                   gridActive={gridActive6}
                   isBlurred={isBlurred}
                   isActive={isItem6Active}
@@ -335,7 +336,7 @@ export const Grid = ({
             <div className={`grid-lvl-4 lvl-4-right item-7-container ${gridActive7 ? 'item-active' : ''}`}>
 
               <GridItem className="item-7"
-                name="item7"
+                name={itemName7}
                 gridActive={gridActive7}
                 isBlurred={isBlurred}
                 isActive={isItem7Active}
@@ -350,7 +351,7 @@ export const Grid = ({
         <div className={`grid-lvl-2 lvl-2-bottom-right item-8-container ${gridActive8 ? 'item-active' : ''}`}>
 
           <GridItem className="item-8"
-            name="item8"
+            name={itemName8}
             gridActive={gridActive8}
             isBlurred={isBlurred}
             isActive={isItem8Active}>

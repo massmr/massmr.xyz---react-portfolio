@@ -1,6 +1,6 @@
 import './Item2.css'
 
-import services from '../assets/services2.png';
+import services from '../../Utils/assets/img/services2.png'
 
 export const Item2 = () => {
   return (

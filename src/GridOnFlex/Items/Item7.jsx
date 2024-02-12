@@ -2,11 +2,11 @@
 import education720 from '../assets/education-video.mp4';
 import educationIMG from '../assets/education-image.png';
 */
-import education from '../assets/education-image-white.png';
+import education from '../../Utils/assets/img/education-image-white.png'
 
-import './Item7.css';
+import './Item7.css'
 
-import { VideoItem } from '../VideoItem/VideoItem.jsx';
+import { VideoItem } from '../VideoItem/VideoItem.jsx'
 
 export const Item7 = () => {
   

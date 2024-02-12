@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Item3.css';
-import paperPlane from '../assets/paper-plane.png'
+import paperPlane from '../../Utils/assets/img/paper-plane.png'
 
 export const Item3 = () => {
   const [isFocused, setIsFocused] = useState(false);

@@ -1,7 +1,7 @@
 import './HomePage.css';
 
 //import assets
-import profilePic from '../assets/profile-pic.png';
+import profilePic from '../Utils/assets/img/profile-pic.png'
 
 export const HomePage = ({ deployGrid }) => {
   return (

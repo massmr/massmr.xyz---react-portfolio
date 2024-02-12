@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 //import components
-import { Header } from './Header/Header.jsx';
 import { Banner } from './Banner/Banner.jsx';
 import { Grid } from './GridOnFlex/GridOnFlex.jsx';
 import { Modale } from './LayoutsComponents/Modal/Modal.jsx';
@@ -58,7 +57,7 @@ const App = () => {
 
   const [isItemPageName, setIsItemPageName] = useState(``);
 
-  const handleItemPageOpen = (content, name) => {
+  const handleItemPageOpen = (name) => {
     setIsGridClosing(true);
     setIsItemPageName(name);
   }

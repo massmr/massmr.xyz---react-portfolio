@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import './ItemPage.css'
 
-import { Item1PageContent } from '../../GridOnFlex/Items/Item1.jsx'
+import { Item1PageContent } from '../ItemPage/Item1Page.jsx'
 
 export const ItemPage = ({ 
   name,
@@ -27,7 +27,7 @@ export const ItemPage = ({
   return (  
     <div className={`item-page ${name ? 'item-page-' + name : '' } ${isItemPageVisible ? 'item-page-active' : ''}`}>
     
-      {(name === "item-1") && (
+      {(name === "item1") && (
         <Item1PageContent name={name} />
       )}
     

@@ -1,5 +1,5 @@
-import aboutMe720 from '../assets/aboutMe720.mp4';
-import aboutMeIMG from '../assets/aboutMeIMG.svg';
+import aboutMe720 from '../../Utils/assets/img/aboutMe720.mp4'
+import aboutMeIMG from '../../Utils/assets/img/aboutMeIMG.svg'
 
 import './Item4.css';
 
