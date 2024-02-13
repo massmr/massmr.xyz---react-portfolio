@@ -19,10 +19,12 @@ export const Banner = ({
   }
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      activateHomeButton();
-    }, 2000);
-  }, [isGridActive]);
+    if (isItemPageActive) {
+      const timeoutId = setTimeout(() => {
+        activateHomeButton();
+      }, 300);
+    }
+  }, [isItemPageActive]);
 
   return (
     <>

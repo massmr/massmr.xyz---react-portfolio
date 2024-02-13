@@ -60,7 +60,7 @@ export const ProjectCardListItem = ({
   return(
     <>
       {(optionalProp1 === name) && (
-        <>
+       <>
           <div 
             className={`project-card-item project-image ${ isImagesDisplay ? 'project-images-active' : 'project-images-not-active' }`}>
             <ProjectImage 

@@ -12,6 +12,8 @@
 
 @media (min-width: 1024px) {
   .item-page {
+    display: flex;
+    justify-content: center;
     max-width: 1440px;
   }
 }

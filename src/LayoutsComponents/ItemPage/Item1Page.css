@@ -57,7 +57,6 @@
 .project-h1 {
   display: flex;
   align-items: center;
-  justify-content: center;
   font-family: 'Jost', sans-serif;
   font-size: 18px;
   color: #F8F9FA;
@@ -116,8 +115,9 @@
 @media (min-width: 1024px) {
   .item-1-page {
    flex-flow: row nowrap;
-   justify-content: center;
+   justify-content: space-between;
    gap: 100px;
+   max-width: 1240px;
   }
   .item-1-spacer {
     display: none;
@@ -128,7 +128,8 @@
     border: none;
     height: 100%;
     width: calc(100% / 3);
-    padding: 0
+    padding: 0;
+    margin-left: -20px;
   }
   .project-selector-active {
     backdrop-filter: blur(0);
