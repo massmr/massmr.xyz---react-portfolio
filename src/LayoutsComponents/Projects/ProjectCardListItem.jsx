@@ -108,15 +108,17 @@ export const ProjectCardListItem = ({
               
               <p className="project-description-subtitle">{description}</p>
               <div className="project-description-anchor-wrapper">
-                <h1 className="project-description-title">
-                  Visit&nbsp; 
-                  <span className="project-description-proj-name">
-                    {name}
-                  </span>
-                </h1>
-                <a href={url} target="_blank">
+                <a 
+                  className="project-description-anchor"
+                  href={url} target="_blank">
+                  <h1 className="project-description-title">
+                    Visit&nbsp; 
+                    <span className="project-description-proj-name">
+                      {name}
+                    </span>
+                  </h1>
                   <FontAwesomeIcon 
-                    className="project-description-anchor" 
+                    className="project-description-anchor-icon" 
                     icon="fa-solid fa-arrow-up-right-from-square" />
                 </a>
               </div>
