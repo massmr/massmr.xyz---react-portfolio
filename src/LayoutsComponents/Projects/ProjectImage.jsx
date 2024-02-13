@@ -9,6 +9,9 @@ import oh1 from '../../Utils/assets/img/omf1.jpg'
 import oh2 from '../../Utils/assets/img/omf2.jpg'
 import oh3 from '../../Utils/assets/img/omf3.jpg'
 
+//To have perfect image styling, more infos on the images are
+//necessary.
+//Dimensions and orientaion will determine image style
 const imageMap = { 
   mi1: {
     src: mi1,
@@ -61,16 +64,13 @@ const getFormat = async (src) => {
   });
 };
 
-
 const fetchDimensions = async () => {
   for (const key in imageMap) {
     const { src } = imageMap[key];
     const format = await getFormat(src);
     imageMap[key].dimensions = format.dimensions;
     imageMap[key].orientation = format.orientation;
-
   }
-  console.log(imageMap);
 }
 
 export const ProjectImage = ({ 
@@ -80,11 +80,11 @@ export const ProjectImage = ({
 
   const { name, images, description, url } = project;
 
-  //select image style watching the orientation
+  //fetch dimensions and orientation
   useEffect(() => {
     fetchDimensions();
   }, []);
-
+  
    //image selection
   const [count, setCount] = useState(1);
   
@@ -106,12 +106,16 @@ export const ProjectImage = ({
   const selectedIdentifier = projectSelected.slice(0, 2) + count.toString();
   const selectedImage = imageMap[selectedIdentifier]; 
 
+  const style = {
+    height: selectedImage.orientation === 'landscape' ? '100%' : '',
+  }
   return (
     <>
       <img
         className="project-img"
         alt={images[0].alt}
-        src={selectedImage.src} />
+        src={selectedImage.src}
+        style={style} />
     </>
   )
 }
