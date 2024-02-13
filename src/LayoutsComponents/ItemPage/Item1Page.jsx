@@ -1,5 +1,5 @@
 //import packages
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 //import styles 
 import './Item1Page.css'
@@ -48,42 +48,41 @@ export const Item1PageContent = ({ name }) => {
 //_____________________________________________________________
 
 const ProjectSelector = ({ handleProjectDisplay }) => {
-
-  //deploy selector full size
   const [isSelectorFocus, setIsSelectorFocus] = useState(false);
-  const handleSelectorToggle = () => {
-    setIsSelectorFocus((prev) => !prev)
-  }
-  
-  //project ordering logic :
-  //this array will be sent to selector for display purpose
-  const [orderedProjects, setOrderProjects] = useState(projects.map((e) => e));
-  
-  //create a new array for swapping only
+  const [orderedProjects, setOrderedProjects] = useState([...projects]);
+  const [currentProjectName, setCurrentProjectName] = useState(orderedProjects[0]?.name || '');
+  const [forefrontIndex, setForefrontIndex] = useState(0);
+
   const moveElementToFront = (array, indexEl) => {
     const newArray = [...array];
     const removedEl = newArray.splice(indexEl, 1);
-
     newArray.unshift(...removedEl);
-
     return newArray;
   };
-  
-  //this is the index that will go 1st place
-  const [forefrontIndex, setForeFrontIndex] = useState(0);
-  //get the index of clicked project
-  const handleSelectorProjectClick = (name) => {
-    const index = projects.findIndex((project) => project.name === name)
-    setForeFrontIndex(index);
-    console.log(forefrontIndex);
-  }
-  //then, launch swapping and rerender selector
+
+  const handleSelectorToggle = () => {
+    setIsSelectorFocus((prev) => !prev);
+  };
+
+  const handleSelectorProjectClick = useCallback((name) => {
+    setCurrentProjectName(name);
+  }, []);
+
   useEffect(() => {
-    //const newOrderedProjects = moveElementToFront(orderedProjects, forefrontIndex);
-    //setOrderProjects(newOrderedProjects);
-    setOrderProjects(prevOrderedProjects => moveElementToFront(prevOrderedProjects, forefrontIndex));
+    const index = orderedProjects.findIndex((project) => project.name === currentProjectName);
+    setForefrontIndex(index);
+  }, [currentProjectName, orderedProjects]);
+
+  useEffect(() => {
+    setOrderedProjects((prevOrderedProjects) => moveElementToFront(prevOrderedProjects, forefrontIndex));
   }, [forefrontIndex]);
   
+  /*
+  useEffect(() => {
+    console.log("orderedProjects has been modified: ", orderedProjects);
+  }, [orderedProjects]);
+  */
+
   return (
     <div
       tabIndex={0}

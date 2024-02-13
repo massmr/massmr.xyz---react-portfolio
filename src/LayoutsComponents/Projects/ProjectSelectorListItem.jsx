@@ -8,8 +8,9 @@ export const ProjectSelectorListItem = ({
   const { name } = project;
   
   const handleClick = () => {
-    optionalProp1(name);
     optionalProp2(name);
+    optionalProp1(name);
+    console.log(name + " has been clicked");
   }
 
   
