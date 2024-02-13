@@ -31,7 +31,7 @@ export const Item1PageContent = ({ name }) => {
   const handleProjectDisplay = (projectName) => {
     setProjectNameDisplayed(projectName);
   }
-  
+
   return (
     <div className="item-1-page">
       
@@ -45,14 +45,45 @@ export const Item1PageContent = ({ name }) => {
   );    
 };
 
+//_____________________________________________________________
+
 const ProjectSelector = ({ handleProjectDisplay }) => {
 
+  //deploy selector full size
   const [isSelectorFocus, setIsSelectorFocus] = useState(false);
-  
   const handleSelectorToggle = () => {
     setIsSelectorFocus((prev) => !prev)
   }
+  
+  //project ordering logic :
+  //this array will be sent to selector for display purpose
+  const [orderedProjects, setOrderProjects] = useState(projects.map((e) => e));
+  
+  //create a new array for swapping only
+  const moveElementToFront = (array, indexEl) => {
+    const newArray = [...array];
+    const removedEl = newArray.splice(indexEl, 1);
 
+    newArray.unshift(...removedEl);
+
+    return newArray;
+  };
+  
+  //this is the index that will go 1st place
+  const [forefrontIndex, setForeFrontIndex] = useState(0);
+  //get the index of clicked project
+  const handleSelectorProjectClick = (name) => {
+    const index = projects.findIndex((project) => project.name === name)
+    setForeFrontIndex(index);
+    console.log(forefrontIndex);
+  }
+  //then, launch swapping and rerender selector
+  useEffect(() => {
+    //const newOrderedProjects = moveElementToFront(orderedProjects, forefrontIndex);
+    //setOrderProjects(newOrderedProjects);
+    setOrderProjects(prevOrderedProjects => moveElementToFront(prevOrderedProjects, forefrontIndex));
+  }, [forefrontIndex]);
+  
   return (
     <div
       tabIndex={0}
@@ -61,10 +92,11 @@ const ProjectSelector = ({ handleProjectDisplay }) => {
 
       <div className="project-name-wrapper">
         <RegularList 
-          items={projects}
+          items={orderedProjects}
           resourceName="project"
           ItemComponent={ProjectSelectorListItem}
-          optionalProp1={handleProjectDisplay} />         
+          optionalProp1={handleProjectDisplay}
+          optionalProp2={handleSelectorProjectClick}/>         
       </div>
     
       <div className="project-icon-container">
@@ -75,6 +107,8 @@ const ProjectSelector = ({ handleProjectDisplay }) => {
     </div>
   );
 };
+
+//_____________________________________________________________
 
 const ProjectCard = ({ projectNameDisplayed }) => {
   const [projectName, setProjectName] = useState(projectNameDisplayed);
