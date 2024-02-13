@@ -80,6 +80,7 @@ export const ProjectCardListItem = ({
             <div className="project-description-text-wrapper">
               
               <p className="project-description-subtitle">{description}</p>
+              
               <div className="project-description-anchor-wrapper">
                 <a 
                   className="project-description-anchor"
@@ -98,13 +99,14 @@ export const ProjectCardListItem = ({
 
             </div>
             
-            <div className="project-description-text-spacer"></div>
-            
-            <button
-              onClick={handleClick}
-              className="project-button project-description-button">
-              Show less
-            </button>
+            <div className="project-description-text-spacer">
+              <button
+                onClick={handleClick}
+                className="project-button project-description-button">
+                Show less
+              </button>
+            </div>
+
           </div>
         </>
       )}

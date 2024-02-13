@@ -57,6 +57,7 @@
 .project-h1 {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Jost', sans-serif;
   font-size: 18px;
   color: #F8F9FA;
@@ -122,10 +123,12 @@
     display: none;
   }
   .project-selector {
-    position: initial;
+    position: relative;
+    overflow: visible;
     border: none;
     height: 100%;
     width: calc(100% / 3);
+    padding: 0
   }
   .project-selector-active {
     backdrop-filter: blur(0);
@@ -134,14 +137,16 @@
     box-shadow: none;
   }
   .project-h1 {
-    font-size: 30px;
+    font-size: 25px;
     padding: 0 15px;
+    margin-left: -15px;
     border-radius: 40px;
-    transition: background-color 150ms ease, color 150ms ease, font-size 150ms ease;
+    transition: margin-left 150ms ease, background-color 150ms ease, color 150ms ease, font-size 150ms ease;
   }
   .project-h1:hover {
     font-size: 32px;
     color: #9B5DE5;
+    margin-left: 0;
     background-color: rgba(0,0,0,0.05);
   }
   .project-icon {

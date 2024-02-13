@@ -25,8 +25,8 @@
 .project-button {
   position: absolute;
   z-index: 10;
-  bottom: 25px;
-  right: 30px;
+  bottom: 0;
+  right: 0;
   border-radius: 30px;
   border: none;
   font-family: 'Jost', sans-serif;
@@ -38,6 +38,8 @@
 }
 .project-image-button {
   background-color: transparent;
+  bottom: 35px;
+  right: 30px;
 }
 .project-description-button {
  background-color: rgba(255,255,255,0.2);
@@ -68,13 +70,15 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-
+  overflow: auto;
   height: 100%;
   width: 100%;
 }
 .project-description-text-spacer {
+  flex-shrink: 0;
+  position: relative;
   width: 100%;
-  height: 30px;
+  height: 60px;
 }
 .project-description-title, .project-description-subtitle {
   color: #F8F9F0;
@@ -89,7 +93,6 @@
   font-weight: 900;
 }
 .project-description-subtitle {
-  height: 100%;
   overflow: scroll;
   font-size: 15px;
   text-align: justify;
@@ -103,7 +106,7 @@
 }
 .project-description-anchor {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
