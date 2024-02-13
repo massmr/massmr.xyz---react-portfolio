@@ -1,5 +1,6 @@
 .project-img {
   object-fit: cover !important;
   opacity: 1;
+  height: 100%;
 }
 

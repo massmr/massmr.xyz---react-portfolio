@@ -12,6 +12,9 @@ import oh3 from '../../Utils/assets/img/omf3.jpg'
 //To have perfect image styling, more infos on the images are
 //necessary.
 //Dimensions and orientaion will determine image style
+//To Do : determine the exact moment when height must be set to
+//100%
+
 const imageMap = { 
   mi1: {
     src: mi1,
