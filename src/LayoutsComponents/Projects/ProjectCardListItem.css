@@ -114,17 +114,11 @@
   width: 20px;
   height: 20px;
 }
-/*
-@media (min-width: 340px) {
-  .project-img {
+@media (min-width: 1024px) {
+  .project-description-title {
+    font-size: 25px;
+  }
+  .project-description-subtitle {
+    font-size: 18px;
   }
 }
-@media (min-width: 440px) {
-  .project-img {
-  }
-}
-@media (min-width: 540px) {
-  .project-img {
-  }
-}
- */

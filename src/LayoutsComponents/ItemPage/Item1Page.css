@@ -58,6 +58,7 @@
   display: flex;
   align-items: center;
   font-family: 'Jost', sans-serif;
+  font-size: 18px;
   color: #F8F9FA;
   height: 100%;
   transition: color 150ms ease
@@ -122,7 +123,35 @@
   }
   .project-selector {
     position: initial;
+    border: none;
+    height: 100%;
+    width: calc(100% / 3);
   }
+  .project-selector-active {
+    backdrop-filter: blur(0);
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  .project-h1 {
+    font-size: 30px;
+    padding: 0 15px;
+    border-radius: 40px;
+    transition: background-color 150ms ease, color 150ms ease, font-size 150ms ease;
+  }
+  .project-h1:hover {
+    font-size: 32px;
+    color: #9B5DE5;
+    background-color: rgba(0,0,0,0.05);
+  }
+  .project-icon {
+    display: none;
+  }
+  .project-card {
+    max-width: fit-content;
+  }
+}
+@media (min-width: 1440px) {
   .project-card {
     max-width: 50%;
   }
