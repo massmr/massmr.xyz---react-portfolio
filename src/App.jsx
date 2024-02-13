@@ -61,6 +61,11 @@ const App = () => {
     setIsGridClosing(true);
     setIsItemPageName(name);
   }
+
+  const handleItemPageClose = () => {
+    setIsItemPageActive(false);
+    setIsGridActive(true);
+  }
   
   //this useEFfect handles the closing animaiton
   useEffect(() => {
@@ -106,7 +111,10 @@ const App = () => {
           </Modale>
         )}
 
-        <Banner isGridActive={isGridActive} />
+        <Banner 
+          isGridActive={isGridActive}
+          handleItemPageClose={handleItemPageClose} 
+          isItemPageActive={isItemPageActive} />
         
         { isItemPageActive &&  isItemPageName &&(
           <ItemPage 
