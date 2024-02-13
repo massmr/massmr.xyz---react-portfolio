@@ -9,6 +9,8 @@ import oh1 from '../../Utils/assets/img/omf1.jpg'
 import oh2 from '../../Utils/assets/img/omf2.jpg'
 import oh3 from '../../Utils/assets/img/omf3.jpg'
 
+import { fetchDimensions } from '../../Utils/fetchFormat.js'
+
 //To have perfect image styling, more infos on the images are
 //necessary.
 //Dimensions and orientaion will determine image style
@@ -48,34 +50,6 @@ const imageMap = {
   }, 
 };
 
-const getFormat = async (src) => {
-  const img = new Image();
-  img.src = src;
-
-  return new Promise((resolve) => {
-    img.onload = () => {
-
-      const width = img.width;
-      const height = img.height;
-      const orientation = width > height ? 'landscape' : 'portrait';
-
-      resolve({
-        dimensions: { width, height },
-        orientation,
-      });
-    };
-  });
-};
-
-const fetchDimensions = async () => {
-  for (const key in imageMap) {
-    const { src } = imageMap[key];
-    const format = await getFormat(src);
-    imageMap[key].dimensions = format.dimensions;
-    imageMap[key].orientation = format.orientation;
-  }
-}
-
 export const ProjectImage = ({ 
   project, 
   projectSelected,
@@ -83,12 +57,7 @@ export const ProjectImage = ({
 
   const { name, images, description, url } = project;
 
-  //fetch dimensions and orientation
-  useEffect(() => {
-    fetchDimensions();
-  }, []);
-  
-   //image selection
+  //image selection
   const [count, setCount] = useState(1);
   
   //reset count 
@@ -109,16 +78,12 @@ export const ProjectImage = ({
   const selectedIdentifier = projectSelected.slice(0, 2) + count.toString();
   const selectedImage = imageMap[selectedIdentifier]; 
 
-  const style = {
-    height: selectedImage.orientation === 'landscape' ? '100%' : '',
-  }
   return (
     <>
       <img
         className="project-img"
         alt={images[0].alt}
-        src={selectedImage.src}
-        style={style} />
+        src={selectedImage.src} />
     </>
   )
 }
