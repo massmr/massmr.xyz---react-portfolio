@@ -21,9 +21,12 @@
   width: 0%;
 }
 .project-img {
-  height: 100% !important;
+  position: absolute;
+  top: 0;
+  left: -35%;
   object-fit: cover !important;
   opacity: 1;
+  max-width: 175%;
 }
 .project-button {
   position: absolute;
@@ -112,4 +115,22 @@
   color: #F8F9F0;
   width: 20px;
   height: 20px;
+}
+@media (min-width: 340px) {
+  .project-img {
+    max-width: 130%;
+    left: -15%;
+  }
+}
+@media (min-width: 440px) {
+  .project-img {
+    max-width: 115%;
+    left: -10%;
+  }
+}
+@media (min-width: 540px) {
+  .project-img {
+    max-width: 100% !important;
+    left: 0;
+  }
 }
