@@ -7,15 +7,8 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 library.add({ faArrowUpRightFromSquare })
 
-//images
-import mi1 from '../../Utils/assets/img/FM20.jpg'
-import mi2 from '../../Utils/assets/img/IMGP4514-Modifier.jpg'
-import mi3 from '../../Utils/assets/img/FM21.jpg'
-import oh1 from '../../Utils/assets/img/omf1.jpg'
-import oh2 from '../../Utils/assets/img/omf2.jpg'
-import oh3 from '../../Utils/assets/img/omf3.jpg'
-
-const imageMap = { mi1, mi2, mi3, oh1, oh2, oh3 };
+//import components
+import { ProjectImage } from './ProjectImage.jsx'
 
 export const ProjectCardListItem = ({
   project, 
@@ -63,37 +56,17 @@ export const ProjectCardListItem = ({
     }
   };
 
-  //image selection
-  const [count, setCount] = useState(1);
-  
-  //reset count 
-  useEffect(() => {
-    setCount(1);
-  }, [optionalProp1, isImagesDisplay])
-
-  //carrousel in loop if 3 images
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      (count < 3) ? setCount(count + 1) : setCount(1);
-    }, 4000)
-
-    return () => clearTimeout(timeoutId);
-  }, [count]);
-
-  const selectedIdentifier = optionalProp1.slice(0, 2) + count.toString();
-  const selectedImage = imageMap[selectedIdentifier]; 
-
-  //To do : integrate callback, to detect which project is selected
+   //detect img dimensions, determine style to apply
   return(
     <>
       {(optionalProp1 === name) && (
         <>
           <div 
             className={`project-card-item project-image ${ isImagesDisplay ? 'project-images-active' : 'project-images-not-active' }`}>
-            <img
-              className="project-img"
-              alt={images[0].alt} 
-              src={selectedImage} />
+            <ProjectImage 
+              project={project} 
+              projectSelected={optionalProp1}
+              isImagesDisplay={isImagesDisplay} />
             <button
               onClick={handleClick}
               className="project-button project-image-button">

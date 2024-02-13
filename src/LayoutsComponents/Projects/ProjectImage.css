@@ -1,0 +1,10 @@
+.project-img {
+  object-fit: cover !important;
+  opacity: 1;
+}
+.project-img-portrait {
+  height: initial;
+}
+.project-img-landscape {
+  height: 100%;
+}
