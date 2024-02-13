@@ -28,7 +28,7 @@
 .project-button {
   position: absolute;
   z-index: 10;
-  bottom: 20px;
+  bottom: 25px;
   right: 30px;
   border-radius: 30px;
   border: none;
@@ -52,6 +52,7 @@
 
   position: relative;
   width: 100%;
+  height: 100%;
   background-color: rgba(0,0,0,0.40);
   box-shadow: inset 0 0 10px rgba(255,255,255,0.2);
   padding: 40px;
@@ -66,15 +67,32 @@
 .project-description-reset-width {
   width: 0% !important; 
 }
+.project-description-text-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 100%;
+}
+.project-description-text-spacer {
+  width: 100%;
+  height: 30px;
+}
 .project-description-title, .project-description-subtitle {
   color: #F8F9F0;
   font-family: 'Jost', sans-serif;
 }
 .project-description-title {
-  font-size: 30px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.project-description-proj-name {
+  color: #9B5DE5;
+  font-weight: 900;
 }
 .project-description-subtitle {
-  font-size: 18px;
+  font-size: 15px;
   text-align: justify;
 }
 .project-description-anchor-wrapper {
@@ -85,6 +103,6 @@
 }
 .project-description-anchor {
   color: #F8F9F0;
-  width: 28px;
-  height: 28px;
+  width: 18px;
+  height: 18px;
 }

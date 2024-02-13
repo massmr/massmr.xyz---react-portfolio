@@ -103,15 +103,28 @@ export const ProjectCardListItem = ({
     
           <div 
             className={`project-card-item project-description ${ isDescriptionDisplay ? 'project-description-active' : 'project-description-not-active'} ${isWidthDescription ? 'project-description-reset-width' : ''}`}>
-            <div className="project-description-anchor-wrapper">
-              <h1 className="project-description-title">{name}</h1>
-              <a href={url} target="_blank">
-                <FontAwesomeIcon 
-                  className="project-description-anchor" 
-                  icon="fa-solid fa-arrow-up-right-from-square" />
-              </a>
+            
+            <div className="project-description-text-wrapper">
+              
+              <p className="project-description-subtitle">{description}</p>
+              <div className="project-description-anchor-wrapper">
+                <h1 className="project-description-title">
+                  Visit&nbsp; 
+                  <span className="project-description-proj-name">
+                    {name}
+                  </span>
+                </h1>
+                <a href={url} target="_blank">
+                  <FontAwesomeIcon 
+                    className="project-description-anchor" 
+                    icon="fa-solid fa-arrow-up-right-from-square" />
+                </a>
+              </div>
+
             </div>
-            <p className="project-description-subtitle">{description}</p>
+            
+            <div className="project-description-text-spacer"></div>
+            
             <button
               onClick={handleClick}
               className="project-button project-description-button">
