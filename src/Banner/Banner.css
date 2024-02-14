@@ -24,7 +24,6 @@
   padding: 0 15px;
   border-radius: 40px;
   background-color: rgba(0,0,0,0.3);
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.25);
 }
 .banner-text-wrapper {
   display: flex;
@@ -67,6 +66,9 @@
     padding: 0 25px;
     margin-left: -25px;
     border-radius: 40px;
+  }
+  .banner-title-item-page {
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.25);
   }
   .banner-text-wrapper {
     align-items: flex-end;
