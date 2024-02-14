@@ -6,8 +6,9 @@ export const Banner = ({
   handleItemPageClose,
   isItemPageActive }) => {
   
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [homeButtonActive, setHomeButtonActive] = useState(false);
-
+  
   const activateHomeButton = () => {
     setHomeButtonActive(true);
   }
@@ -20,10 +21,19 @@ export const Banner = ({
 
   useEffect(() => {
     if (isItemPageActive) {
-      const timeoutId = setTimeout(() => {
+      if(windowWidth >= 1024) {
+        const timeoutId = setTimeout(() => {
+          activateHomeButton();
+        }, 500);
+        return () => clearTimeout(timeoutId);
+      } else {
         activateHomeButton();
-      }, 300);
+      }
     }
+  }, [isItemPageActive]);
+ 
+  useEffect(() => {
+    isItemPageActive ? null : setHomeButtonActive(false);
   }, [isItemPageActive]);
 
   return (
