@@ -137,14 +137,58 @@ export const Grid = ({
   //handle closing animation
   useEffect(() => {
     if (gridCloseAnimation) {
-      setGridActive1(false)
-      setGridActive2(false)
-      setGridActive3(false)
-      setGridActive4(false)
-      setGridActive5(false)
-      setGridActive6(false)
-      setGridActive7(false)
-      setGridActive8(false)
+      if (windowWidth < 1024) {
+        const timeoutId1 = setTimeout(() => {
+          setGridActive1(false)
+        }, 625);
+        const timeoutId2 = setTimeout(() => {
+          setGridActive2(false);
+        }, 550);
+        const timeoutId3 = setTimeout(() => {
+          setGridActive3(false);
+        }, 475);
+        const timeoutId4 = setTimeout(() => {
+          setGridActive4(false);
+        }, 400);
+        const timeoutId5 = setTimeout(() => {
+          setGridActive5(false);
+        }, 175);
+        const timeoutId6 = setTimeout(() => {
+          setGridActive6(false);
+        }, 100);
+        const timeoutId7 = setTimeout(() => {
+          setGridActive7(false);
+        }, 250);
+        const timeoutId8 = setTimeout(() => {
+          setGridActive8(false);
+        }, 325);
+      } else {
+        const timeoutId1 = setTimeout(() => {
+          setGridActive1(false)
+        }, 475);
+        const timeoutId2 = setTimeout(() => {
+          setGridActive2(false);
+        }, 550);
+        const timeoutId3 = setTimeout(() => {
+          setGridActive3(false);
+        }, 625);
+        const timeoutId4 = setTimeout(() => {
+          setGridActive4(false);
+        }, 100);
+        const timeoutId5 = setTimeout(() => {
+          setGridActive5(false);
+        }, 175);
+        const timeoutId6 = setTimeout(() => {
+          setGridActive6(false);
+        }, 250);
+        const timeoutId7 = setTimeout(() => {
+          setGridActive7(false);
+        }, 325);
+        const timeoutId8 = setTimeout(() => {
+          setGridActive8(false);
+        }, 400);
+
+      }
     }
   }, [gridCloseAnimation]);
   //_______________________________________________________

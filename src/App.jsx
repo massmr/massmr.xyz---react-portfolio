@@ -74,7 +74,7 @@ const App = () => {
         setIsGridActive(false);
         setIsGridClosing(false);
         setIsItemPageActive(true);
-      }, 500);
+      }, 1025);
 
       return () => clearTimeout(timeoutId);
     }

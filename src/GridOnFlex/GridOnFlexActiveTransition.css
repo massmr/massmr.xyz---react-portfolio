@@ -3,35 +3,35 @@
   transform: translateY(0) !important;
 }
 .item-1-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateX(-200vh);
 }
 .item-2-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateY(-200vh);
 }
 .item-3-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateX(200vh);
 }
 .item-4-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateX(200vh);
 }
 .item-5-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateX(-200vh);
 }
 .item-6-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateY(200vh);
 }
 .item-7-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateY(200vh);
 }
 .item-8-container {
-  transition: transform 400ms ease;
+  transition: transform 400ms ease-in-out;
   transform: translateY(200vh);
 }
 @media (min-width: 1024px) {
