@@ -8,6 +8,7 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 library.add({ faArrowUpRightFromSquare })
 
 //import components
+import { Card } from '../Card/Card.jsx'
 import { ProjectImage } from './ProjectImage.jsx'
 import { CardButton } from '../Card/CardButton.jsx'
 
@@ -19,12 +20,12 @@ export const ProjectCardListItem = ({
   const { name, images, description, url } = project;
   
   //trigger the cards animation
-  const [isImagesDisplay, setIsImagesDisplay] = useState(true);
+  const [isImageDisplay, setIsImageDisplay] = useState(true);
   const [isDescriptionDisplay, setIsDescriptionDisplay] = useState(false);
   const [isWidthDescription, setIsWidthDescription] = useState(true);
 
   const handleImageToggle = () => {
-    setIsImagesDisplay((prev) => !prev);
+    setIsImageDisplay((prev) => !prev);
   }
   const handleDescriptionToggle = () => {
     setIsDescriptionDisplay((prev) => !prev); 
@@ -34,7 +35,7 @@ export const ProjectCardListItem = ({
   }
   
   const handleClick = () => {
-    if (isImagesDisplay) {
+    if (isImageDisplay) {
       handleImageToggle();
       handleWidthDescriptionToggle();
       const timeoutId = setTimeout(() => {
@@ -62,22 +63,26 @@ export const ProjectCardListItem = ({
     <>
       {(optionalProp1 === name) && (
        <>
-          <div 
-            className={`project-card-item project-image ${ isImagesDisplay ? 'project-images-active' : 'project-images-not-active' }`}>
+          <Card 
+            isActive={isImageDisplay}
+            customClasses={`project-image ${isImageDisplay ? `project-image-active` : `project-image-not-active`}`}>
             <ProjectImage 
               project={project} 
               projectSelected={optionalProp1}
-              isImagesDisplay={isImagesDisplay} />
+              isImageDisplay={isImageDisplay} />
             <CardButton 
               category='image'
               handleClick={handleClick}>
               Read more
             </CardButton>
-          </div>
-    
-          <div 
-            className={`project-card-item project-description ${ isDescriptionDisplay ? 'project-description-active' : 'project-description-not-active'} ${isWidthDescription ? 'project-description-reset-width' : ''}`}>
-            
+          </Card>
+              
+         
+          <Card
+            isActive={isDescriptionDisplay}
+            customClasses={`project-description ${isDescriptionDisplay ? `project-description-active` : `project-description-not-active`} ${isWidthDescription ? `project-description-reset-width` : ''}`}
+            optionalProp={isWidthDescription} >
+          
             <div className="project-description-text-wrapper">
               
               <p className="project-description-subtitle">{description}</p>
@@ -108,7 +113,7 @@ export const ProjectCardListItem = ({
               </CardButton>
             </div>
 
-          </div>
+          </Card>
         </>
       )}
     </>

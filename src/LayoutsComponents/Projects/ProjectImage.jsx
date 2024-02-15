@@ -53,7 +53,7 @@ const imageMap = {
 export const ProjectImage = ({ 
   project, 
   projectSelected,
-  isImagesDisplay }) => {
+  isImageDisplay }) => {
 
   const { name, images, description, url } = project;
 
@@ -63,7 +63,7 @@ export const ProjectImage = ({
   //reset count 
   useEffect(() => {
     setCount(1);
-  }, [projectSelected, isImagesDisplay])
+  }, [projectSelected, isImageDisplay])
 
   //carrousel in loop if 3 images
   useEffect(() => {
