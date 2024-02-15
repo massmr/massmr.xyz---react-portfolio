@@ -1,18 +1,16 @@
 export const ComingSoon = () => {
   const containerStyle = {
-    display: 'flex',
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative',
   }
   const contentStyle = {
-    position: 'relative',
+    position: 'absolute',
     color: '#F8F9FA',
     fontSize: '30px',
     fontFamily: `'Jost', sans-serif`,
-    transform: 'translateY(-60px)',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
   }
   return (
     <div style={containerStyle}>
