@@ -10,7 +10,6 @@ export const ProjectSelectorListItem = ({
   const handleClick = () => {
     optionalProp2(name);
     optionalProp1(name);
-    console.log(name + " has been clicked");
   }
 
   
