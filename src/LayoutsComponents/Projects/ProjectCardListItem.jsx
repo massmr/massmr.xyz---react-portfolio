@@ -9,6 +9,7 @@ library.add({ faArrowUpRightFromSquare })
 
 //import components
 import { ProjectImage } from './ProjectImage.jsx'
+import { CardButton } from '../Card/CardButton.jsx'
 
 export const ProjectCardListItem = ({
   project, 
@@ -67,11 +68,11 @@ export const ProjectCardListItem = ({
               project={project} 
               projectSelected={optionalProp1}
               isImagesDisplay={isImagesDisplay} />
-            <button
-              onClick={handleClick}
-              className="project-button project-image-button">
-              Show more
-            </button>
+            <CardButton 
+              category='image'
+              handleClick={handleClick}>
+              Read more
+            </CardButton>
           </div>
     
           <div 
@@ -100,11 +101,11 @@ export const ProjectCardListItem = ({
             </div>
             
             <div className="project-description-text-spacer">
-              <button
-                onClick={handleClick}
-                className="project-button project-description-button">
-                Show less
-              </button>
+              <CardButton
+                category='description'
+                handleClick={handleClick}>
+                Show images
+              </CardButton>
             </div>
 
           </div>
