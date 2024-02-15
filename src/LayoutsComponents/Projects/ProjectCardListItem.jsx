@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react'
 import './ProjectCardListItem.css' 
 
-//import icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
-library.add({ faArrowUpRightFromSquare })
-
 //import components
 import { Card } from '../Card/Card.jsx'
 import { ProjectImage } from './ProjectImage.jsx'
 import { CardButton } from '../Card/CardButton.jsx'
+import { ProjectDescriptionListItem } from './ProjectDescriptionListItem.jsx'
 
 export const ProjectCardListItem = ({
   project, 
@@ -82,28 +77,8 @@ export const ProjectCardListItem = ({
             isActive={isDescriptionDisplay}
             customClasses={`project-description ${isDescriptionDisplay ? `project-description-active` : `project-description-not-active`} ${isWidthDescription ? `project-description-reset-width` : ''}`}
             optionalProp={isWidthDescription} >
-          
-            <div className="project-description-text-wrapper">
-              
-              <p className="project-description-subtitle">{description}</p>
-              
-              <div className="project-description-anchor-wrapper">
-                <a 
-                  className="project-description-anchor"
-                  href={url} target="_blank">
-                  <h1 className="project-description-title">
-                    Visit&nbsp; 
-                    <span className="project-description-proj-name">
-                      {name}
-                    </span>
-                  </h1>
-                  <FontAwesomeIcon 
-                    className="project-description-anchor-icon" 
-                    icon="fa-solid fa-arrow-up-right-from-square" />
-                </a>
-              </div>
-
-            </div>
+            
+            <ProjectDescriptionListItem project={project} />
             
             <div className="project-description-text-spacer">
               <CardButton
@@ -112,7 +87,6 @@ export const ProjectCardListItem = ({
                 Show images
               </CardButton>
             </div>
-
           </Card>
         </>
       )}
