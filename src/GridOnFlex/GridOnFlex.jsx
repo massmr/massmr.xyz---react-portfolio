@@ -307,7 +307,7 @@ export const Grid = ({
 
             <GridItem className="item-2"
               name={itemName2}
-              openItemPage={() => openItemPage(Item1PageContent, itemName2)}
+              openItemPage={() => openItemPage(itemName2)}
               gridActive={gridActive2}
               isBlurred={isBlurred}
               isActive={isItem2Active}
@@ -322,6 +322,7 @@ export const Grid = ({
 
           <GridItem className="item-3"
             name={itemName3}
+            openItemPage={() => openItemPage(itemName3)}
             gridActive={gridActive3}
             isBlurred={isBlurred}
             isActive={isItem3Active}
@@ -338,6 +339,7 @@ export const Grid = ({
 
             <GridItem className="item-4"
               name={itemName4}
+              openItemPage={() => openItemPage(itemName4)}
               gridActive={gridActive4}
               isBlurred={isBlurred}
               isActive={isItem4Active}
@@ -381,6 +383,7 @@ export const Grid = ({
 
               <GridItem className="item-7"
                 name={itemName7}
+                openItemPage={() => openItemPage(itemName7)}
                 gridActive={gridActive7}
                 isBlurred={isBlurred}
                 isActive={isItem7Active}

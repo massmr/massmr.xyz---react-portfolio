@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react'
 import './ItemPage.css'
 
 import { Item1PageContent } from '../ItemPage/Item1Page.jsx'
+import { Item2PageContent } from '../ItemPage/Item2Page.jsx'
+import { Item3PageContent } from '../ItemPage/Item3Page.jsx'
+import { Item4PageContent } from '../ItemPage/Item4Page.jsx'
+import { Item7PageContent } from '../ItemPage/Item7Page.jsx'
 
 export const ItemPage = ({ 
   name,
@@ -30,7 +34,23 @@ export const ItemPage = ({
       {(name === "item1") && (
         <Item1PageContent name={name} />
       )}
-    
+
+      {(name === "item2") && (
+        <Item2PageContent name={name} />
+      )}
+      
+      {(name === "item3") && (
+        <Item3PageContent name={name} />
+      )}
+
+      {(name === "item4") && (
+        <Item4PageContent name={name} />
+      )}
+
+      {(name === "item7") && (
+        <Item7PageContent name={name} />
+      )}
+
     </div>
   )
-}
+} 
