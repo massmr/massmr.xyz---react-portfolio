@@ -5,11 +5,14 @@ export const ComingSoon = () => {
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    position: 'relative',
   }
   const contentStyle = {
+    position: 'relative',
     color: '#F8F9FA',
     fontSize: '30px',
     fontFamily: `'Jost', sans-serif`,
+    transform: 'translateY(-60px)',
   }
   return (
     <div style={containerStyle}>
