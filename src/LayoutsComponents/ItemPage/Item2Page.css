@@ -4,8 +4,9 @@
   align-items: center;
   gap: 30px;
   width: 100%;
+  height: fit-content;
   margin-top: 30px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 .service-button-wrapper {
   display: flex;
@@ -26,6 +27,9 @@
 .service-button-icon-active {
   color: #8B0000;
   transform: rotate(225deg);
+}
+.service-spacer {
+  width: 100%;
 }
 @media (min-width: 1024px) {
   .service-container {

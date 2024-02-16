@@ -16,6 +16,7 @@ export const Item2PageContent = ({ name }) => {
           items={services}
           resourceName="service"
           ItemComponent={ServiceListItem} />
+        <div className="service-spacer"></div>
       </section>
     </>
   );
