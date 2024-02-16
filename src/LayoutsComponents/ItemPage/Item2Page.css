@@ -1,0 +1,122 @@
+.service-container {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 30px;
+}
+.service-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.25);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+.service-title, .service-description {
+  color: #F8F9FA;
+}
+.service-title-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding:0 20px;
+  background: rgb(195,126,240);
+  background: linear-gradient(30deg, rgba(195,126,240,1) 0%, rgba(147,143,208,0.9999504089355469) 100%);
+}
+.service-title {
+  font-family: 'Jost', sans-serif;
+  font-size: 18px;
+}
+.service-content-wrapper {
+ display: flex;
+ flex-flow: column nowrap;
+ gap: 10px;
+ height: auto;
+ margin: 0 20px 20px 20px
+}
+.service-description {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  text-align: justify;
+}
+.service-button-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer; 
+}
+.service-button-text {
+  font-family: 'Jost', sans-serif;
+  text-shadow: 0 0 7px rgba(30,30,30,1);
+  color: #9B5DE5;
+}
+.service-button-icon {
+  color: #9B5DE5;
+  transition: transform 400ms ease, color 150ms ease;
+}
+.service-button-icon-animated {
+  transform: rotate(225deg);
+}
+.service-button-icon-active {
+  color: #8B0000;
+}
+.service-detail-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 600ms ease-in-out;
+}
+.service-detail-container-active {
+  max-height: 1000px;
+}
+.service-detail-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  width: auto;
+  height: auto;
+}
+.service-detail-icon {
+  color: #9B5DE5;
+}
+.service-detail-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #F8F9FA;
+  text-align: justify;
+}
+.go-to-contact-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.go-to-contact-button {
+  border: none;
+  border-radius: 25px;
+  background: rgb(195,126,240);
+  background: linear-gradient(225deg, rgba(195,126,240,1) 0%, rgba(147,143,208,0.9999504089355469) 100%);
+  max-width: 150px;
+  color: #F8F9FA;
+  font-family: 'Jost', sans-serif;
+  padding: 10px 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+.go-to-contact-button:hover {
+  transform: scale(1.025);
+}
+@media (min-width) {
+  .service-wrapper {
+    flex-flow: row nowrap;
+  }
+}
