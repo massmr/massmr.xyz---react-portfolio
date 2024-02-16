@@ -48,7 +48,11 @@
   font-weight: 900;
   color: #9B5DE5;
 }
-
+@media (min-width: 390px) {
+  .banner-wrapper {
+    height: 63px;
+  }
+}
 @media (min-width: 1024px) {
   .banner-wrapper {
     height: 100px;
@@ -78,18 +82,12 @@
     font-size: 15px;
   }
 }
-@media (min-width: 390px) {
-  .banner-wrapper {
-    height: 63px;
-  }
-}
-@media (max-width: 390px) {
-  .banner-wrapper {
-
-  }
+@media (max-width: 372px) {
   .banner-text-wrapper {
     align-items: flex-start;
   }
+}
+@media (max-width: 390px) {
   .banner-subtitle {
     margin: 0;
   }
@@ -99,3 +97,4 @@
     display: none;
   }
 }
+
