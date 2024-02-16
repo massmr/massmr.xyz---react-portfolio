@@ -51,13 +51,12 @@ export const Modale = ({ children,
           <div
             className={`modale-body ${isBackgroundVisible ? 'modale-body-active' : ''}`}
             onClick={e => e.stopPropagation()}>
-            
-            <FontAwesomeIcon
+
+            <div className="modale-wrapper">
+              <FontAwesomeIcon
               className="modale-close-button"
               onClick={closeModale}
               icon="fa-solid fa-circle-xmark" />
-
-            <div className="modale-wrapper">
               {children}
             </div>
           
