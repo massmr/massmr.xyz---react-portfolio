@@ -1,70 +1,56 @@
 export const services = [
   {
-    title: 'Custom website plan',
+    title: 'Custom Website Plan',
     description: "Elevate your business or personal presence with a website that reflects your needs. I will design and develop a professional and engaging site, leaving a lasting impression on clients or partners.",
     url: 'svc1',
     details: [
-      "Professionally styled, custom designs that match your branding and vision",
-      "Positive user experience navigation and designs",
-      "Responsive design",
-      "Lead-generating and performance-tested website copy",
-      "Designs and copy optimized for SEO",
-      "Ecommerce functionality",
+      "Professionally styled & cutsom designs matching your branding",
+      "Positive user experience and user interface",
+      "Responsive design to match mobile, tablet, and desktop medias",
+      "Performance tested website using cutting-edge techs",
+      "Focus on SEO optimization",
+      "E-commerce functionality",
       "Database integration",
       "New website page creation",
-      "Access to our in-house revenue acceleration software, MarketingCloudFX",
-      "Closed-loop call, lead, customer journey, and revenue tracking"
     ]
   },
   {
-    title: 'Custom web app plan',
-    description: "Embark on a digital journey as I design and develop your personalized Web App to suit your vision. Experience your ideas coming to life, resulting in a sleek and functional online product.", 
+    title: 'Custom Web App Plan',
+    description: "Embark on a digital journey as I design and develop your personalized Web App to suit your vision. Experience your ideas coming to life, resulting in a sleek and functional online product.",
     url: 'svc2',
     details: [
-      "Professionally styled, custom designs that match your branding and vision",
-      "Positive user experience navigation and designs",
-      "Responsive design",
-      "Lead-generating and performance-tested website copy",
-      "Designs and copy optimized for SEO",
-      "Ecommerce functionality",
-      "Database integration",
-      "New website page creation",
-      "Access to our in-house revenue acceleration software, MarketingCloudFX",
-      "Closed-loop call, lead, customer journey, and revenue tracking"
+      "Positive user experience and user interface",
+      "Custom functionalities to meet specific app requirements",
+      "Scalable architecture for future growth",
+      "Performance optimization for a smooth user experience",
+      "Integration with third-party services if needed",
+      "Cross-platform compatibility"
     ]
   },
   {
-    title: 'Wordpress features customization',
+    title: 'WordPress Features Customization',
     description: `Unleash the power of WordPress with my customization service. Personalize your website to match your brand perfectly. From themes to plugins, I'll ensure your WordPress site stands out in the crowd.`,
+    url: 'svc3',
+    details: [
+      "WordPress theme customization to align with your brand identity",
+      "Plugin integration and customization",
+      "Optimization for fast loading times",
+      "Responsive design for various devices",
+      "Enhanced security measures",
+      "SEO-friendly configurations"
+    ]
+  },
+  {
+    title: 'WordPress Debugging',
+    description: `Don't let bugs spoil your WordPress experience! I'm here to tackle any glitches and ensure your website runs smoothly. Say goodbye to pesky errors and hello to a seamless WordPress journey!`,
     url: 'svc4',
     details: [
-      "Professionally styled, custom designs that match your branding and vision",
-      "Positive user experience navigation and designs",
-      "Responsive design",
-      "Lead-generating and performance-tested website copy",
-      "Designs and copy optimized for SEO",
-      "Ecommerce functionality",
-      "Database integration",
-      "New website page creation",
-      "Access to our in-house revenue acceleration software, MarketingCloudFX",
-      "Closed-loop call, lead, customer journey, and revenue tracking"
-    ]
-  },
-  {
-    title: 'Wordpress debugging',
-    description: `Don't let bugs spoil your WordPress experience! I'm here to tackle any glitches and ensure your website runs smoothly. Say goodbye to pesky errors and hello to a seamless WordPress journey!`,
-    url: 'svc5',
-    details: [
-      "Professionally styled, custom designs that match your branding and vision",
-      "Positive user experience navigation and designs",
-      "Responsive design",
-      "Lead-generating and performance-tested website copy",
-      "Designs and copy optimized for SEO",
-      "Ecommerce functionality",
-      "Database integration",
-      "New website page creation",
-      "Access to our in-house revenue acceleration software, MarketingCloudFX",
-      "Closed-loop call, lead, customer journey, and revenue tracking"
+      "Identification and resolution of WordPress errors",
+      "Performance optimization for faster loading",
+      "Security audit and enhancements",
+      "Plugin conflict resolution",
+      "Compatibility checks with the latest WordPress version",
+      "Backup and recovery solutions"
     ]
   },
 ]
