@@ -61,11 +61,9 @@
   color: #9B5DE5;
   transition: transform 400ms ease, color 150ms ease;
 }
-.service-button-icon-animated {
-  transform: rotate(225deg);
-}
 .service-button-icon-active {
   color: #8B0000;
+  transform: rotate(225deg);
 }
 .service-detail-container {
   display: flex;

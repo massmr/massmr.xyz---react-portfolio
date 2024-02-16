@@ -101,11 +101,8 @@ const SeeDetailButton = ({
   handleShowDetails,
   handleHideDetails,
   }) => {
-  const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const handleToggleHover = () => {
-    setIsHovered((prev) => !prev);
-  }
+
   const handleToggleActivation = () => {
     setIsActive((prev) => !prev);
   }
@@ -118,12 +115,10 @@ const SeeDetailButton = ({
   return (
     <div className="service-button-wrapper">
       <p
-        onMouseEnter={handleToggleHover}
-        onMouseLeave={handleToggleHover}
         onClick={handleClick}
         className="service-button-text">See plan details</p>
       <FontAwesomeIcon 
-        className={`service-button-icon ${(isHovered || isActive) ? 'service-button-icon-animated' : '' } ${isActive ? 'service-button-icon-active' : '' }`}
+        className={`service-button-icon ${isActive ? 'service-button-icon-active' : '' }`}
         icon="fa-solid fa-plus" />
     </div>
   );
