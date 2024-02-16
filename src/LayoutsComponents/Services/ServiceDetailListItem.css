@@ -1,0 +1,16 @@
+.service-detail-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  width: auto;
+  height: auto;
+}
+.service-detail-icon {
+  color: #9B5DE5;
+}
+.service-detail-text {
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #F8F9FA;
+  text-align: justify;
+}

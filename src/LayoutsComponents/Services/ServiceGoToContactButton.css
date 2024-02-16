@@ -1,0 +1,22 @@
+.go-to-contact-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.go-to-contact-button {
+  border: none;
+  border-radius: 25px;
+  background: rgb(195,126,240);
+  background: linear-gradient(225deg, rgba(195,126,240,1) 0%, rgba(147,143,208,0.9999504089355469) 100%);
+  max-width: 150px;
+  color: #F8F9FA;
+  font-family: 'Jost', sans-serif;
+  padding: 10px 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 150ms ease;
+}
+.go-to-contact-button:hover {
+  transform: scale(1.025);
+}
+
