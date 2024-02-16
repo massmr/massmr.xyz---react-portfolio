@@ -34,7 +34,7 @@ export const services = [
     ]
   },
   {
-    title: 'Wodrpress features customization',
+    title: 'Wordpress features customization',
     description: `Unleash the power of WordPress with my customization service. Personalize your website to match your brand perfectly. From themes to plugins, I'll ensure your WordPress site stands out in the crowd.`,
     url: 'svc4',
     details: [
