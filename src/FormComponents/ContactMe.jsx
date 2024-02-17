@@ -15,19 +15,20 @@ export const ContactForm = () => {
       email: inputEmail.value,
       message: message.value,
     }
-    console.log(contactForm);
 
     try {
-      const response = await fetch('url', {
+      const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+      const response = await fetch(backendUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(contactForm),
+        mode: 'cors',
       });
 
       if (response.ok) {
-        setFormStatus('Your message has been sent !');
+        setFormStatus('Message sent');
       } else {
         setFormStatus('Sending failed ...');
       }
