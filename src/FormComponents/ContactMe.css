@@ -4,7 +4,12 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  width: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80%;
   height: 100%;
 }
 .contact-form-title {
@@ -47,6 +52,24 @@ input, textarea {
 }
 textarea {
   padding: 5px 15px;
+}
+.form-control::-webkit-input-placeholder {
+  font-family: 'Jost', sans-serif;
+}
+.form-control::-ms-input-placeholder {
+  font-family: 'Jost', sans-serif;
+}
+.form-control::-moz-placeholder {
+  font-family: 'Jost', sans-serif;
+}
+.form-control[type='text'] {
+  font-family: 'Jost', sans-serif;
+}
+.form-control[type='email'] {
+  font-family: 'Jost', sans-serif;
+}
+.form-control:focus {
+  outline: 2px solid #9B5DE5;
 }
 .form-cotnrol {
   width: 100%;
