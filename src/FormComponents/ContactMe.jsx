@@ -17,7 +17,10 @@ export const ContactForm = () => {
     }
 
     try {
-      const backendUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+      const backendBaseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
+      const route = '/massmr/contact';
+      const backendUrl = `${backendBaseUrl}${route}`;
+
       const response = await fetch(backendUrl, {
         method: 'POST',
         headers: {
