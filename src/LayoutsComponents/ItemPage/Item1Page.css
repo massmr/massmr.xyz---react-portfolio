@@ -145,10 +145,8 @@
     transition: margin-left 150ms ease, background-color 150ms ease, color 150ms ease, font-size 150ms ease;
   }
   .project-h1:hover {
-    font-size: 26px;
     color: #9B5DE5;
     margin-left: 0;
-    background-color: rgba(0,0,0,0.05);
   }
   .project-icon {
     display: none;
