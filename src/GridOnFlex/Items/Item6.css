@@ -23,6 +23,33 @@
   font-size: 15px;
   text-shadow: 0px 0px 10px rgba(0,0,0,7);
 }
+.item-6-modale-content-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+  align-items: center;
+}
+.item-6-modale-button {
+  width: 200px;
+  max-width: 70%;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+   color: #F8F9FA;
+  font-family: 'Jost', sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+}
+.item-6-modale-button-download {
+  background: rgb(195,126,240);
+  background: linear-gradient(30deg, rgba(195,126,240,1) 0%, rgba(147,143,208,0.9999504089355469) 100%);
+}
+.item-6-modale-button-cancel {
+  background-color: grey;
+  opacity: 0.7;
+}
 @media (min-width: 440px) {
   .item-6-text {
     font-size: 20px;

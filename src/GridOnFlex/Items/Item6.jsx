@@ -10,26 +10,22 @@ export const Item6 = () => (
   </>
 );
 
- const backendBaseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
-      const route = '/massmr/contact';
-      const backendUrl = `${backendBaseUrl}${route}`;
-
 export const Item6ModaleContent = () => {
   const handleDownload = async () => {
     const backendBaseUrl = import.meta.env.VITE_REACT_APP_BACKEND_URL;
     const route = '/massmr/download/';
     const filename = 'resume.pdf';
     const backendUrl = `${backendBaseUrl}${route}${filename}`;
-  const response = await fetch(backendUrl);
-  const blob = await response.blob();
+    const response = await fetch(backendUrl);
+    const blob = await response.blob();
 
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
- }
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
   return (
     <div className="item-6-modale-content-container">
