@@ -13,7 +13,7 @@ export const Item1 = () => {
         name="item1-image"
         source={MDPortrait} 
       />
-      <button className="item-1-button">Projects</button>
+      <button className="item-1-button">PROJECTS</button>
     </>
   );
 };
