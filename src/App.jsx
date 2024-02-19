@@ -136,7 +136,7 @@ const App = () => {
           <Grid 
             openItemPage={handleItemPageOpen}
             gridCloseAnimation={isGridClosing}
-            openModale={handleModaleOpen} 
+            openModale={handleModaleOpen}
             isGridActive={isGridActive} />       
         )}
       </section>

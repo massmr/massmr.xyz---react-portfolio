@@ -32,7 +32,6 @@ export const Item6ModaleContent = () => {
       <button 
         onClick={handleDownload}
         className="item-6-modale-button item-6-modale-button-download">Download</button>
-      <button className="item-6-modale-button item-6-modale-button-cancel">Cancel</button>
     </div>
   );
 };
