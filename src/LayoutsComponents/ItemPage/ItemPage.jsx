@@ -11,6 +11,7 @@ import { Item7PageContent } from '../ItemPage/Item7Page.jsx'
 export const ItemPage = ({ 
   name,
   isItemPageActive,
+  handleSwitch
   }) => {
 
   //launch the opacity animation :
@@ -36,7 +37,7 @@ export const ItemPage = ({
       )}
 
       {(name === "item2") && (
-        <Item2PageContent name={name} />
+        <Item2PageContent name={name} handleSwitch={handleSwitch} />
       )}
       
       {(name === "item3") && (

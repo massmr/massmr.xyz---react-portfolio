@@ -7,7 +7,9 @@ import { services } from '../../Utils/services.js'
 
 import  './Item2Page.css'
 
-export const Item2PageContent = ({ name }) => {
+export const Item2PageContent = ({ 
+  name, 
+  handleSwitch }) => {
   
   return (
     <>
@@ -15,7 +17,8 @@ export const Item2PageContent = ({ name }) => {
         <RegularList
           items={services}
           resourceName="service"
-          ItemComponent={ServiceListItem} />
+          ItemComponent={ServiceListItem} 
+          optionalProp1={handleSwitch} />
         <div className="service-spacer"></div>
       </section>
     </>

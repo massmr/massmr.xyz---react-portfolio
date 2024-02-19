@@ -7,7 +7,7 @@ import { RegularList } from '../RegularList/RegularList.jsx'
 import { ServiceDetailListItem } from './ServiceDetailListItem.jsx'
 import { GoToContactButton } from './ServiceGoToContactButton.jsx'
 
-export const ServiceListItem = ({ service }) => {
+export const ServiceListItem = ({ service, optionalProp1 }) => {
   const { title, description, url, details } = service;
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -53,6 +53,10 @@ export const ServiceListItem = ({ service }) => {
     }
   }, [animateDetails]);
 
+  const handleSwitch = (name) => {
+    optionalProp1(name);
+  };
+
   return (
     <div className="service-wrapper">
       
@@ -81,7 +85,7 @@ export const ServiceListItem = ({ service }) => {
               items={details}
               resourceName="detail"
               ItemComponent={ServiceDetailListItem} />
-            <GoToContactButton />
+            <GoToContactButton handleSwitch={handleSwitch}/>
           </div>
         )}
         </div>

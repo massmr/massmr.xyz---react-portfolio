@@ -66,6 +66,10 @@ const App = () => {
     setIsItemPageActive(false);
     setIsGridActive(true);
   }
+
+  const handleItemPageSwitch = (name) => {
+    setIsItemPageName(name);
+  }
   
   //this useEFfect handles the closing animaiton
   useEffect(() => {
@@ -119,10 +123,10 @@ const App = () => {
         { isItemPageActive &&  isItemPageName &&(
           <ItemPage 
             name={isItemPageName} 
-            isItemPageActive={isItemPageActive}>
+            isItemPageActive={isItemPageActive}
+            handleSwitch={handleItemPageSwitch}>
           </ItemPage>
         )}
-        
 
         { isHomePage && !isGridActive && (
           <HomePage deployGrid={handleQuitHomePage} />
