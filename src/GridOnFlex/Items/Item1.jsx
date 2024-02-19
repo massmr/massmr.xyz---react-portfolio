@@ -4,7 +4,7 @@ import './Item1.css';
 //import assets
 import { ImagesContainer } from '../ImagesContainer/ImagesContainer.jsx'
 import MDPortrait from "../../Utils/assets/img/FM20.jpg"
-import gridProject from "../../Utils/assets/img/grid-project.svg"
+import gridProject from "../../Utils/assets/img/grid-project-high.png"
 
 export const Item1 = () => {
   

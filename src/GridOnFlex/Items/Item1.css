@@ -4,7 +4,7 @@
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(150,150,150,0.9);
   border-radius: 8px;
   border: none;
   padding: 4px 17px;
