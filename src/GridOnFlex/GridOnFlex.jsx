@@ -19,7 +19,7 @@ import { Item2 } from './Items/Item2.jsx'
 import { Item3 } from './Items/Item3.jsx'
 import { Item4 } from './Items/Item4.jsx'
 import { Item5, Item5ModaleContent } from './Items/Item5.jsx'
-import { Item6 } from './Items/Item6.jsx'
+import { Item6, Item6ModaleContent } from './Items/Item6.jsx'
 import { Item7 } from './Items/Item7.jsx'
 import { Item8 } from './Items/Item8.jsx'
 
@@ -370,6 +370,7 @@ export const Grid = ({
                 <GridItem className="item-6" 
                   name={itemName6}
                   gridActive={gridActive6}
+                  openModale={() => openModale(Item6ModaleContent)}
                   isBlurred={isBlurred}
                   isActive={isItem6Active}
                   setActive={handleItem6Activation}

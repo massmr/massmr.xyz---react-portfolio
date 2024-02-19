@@ -24,5 +24,6 @@ font-family: 'Major Mono Display', monospace;
 @media (min-width: 1024px) {
   .body-background {
     padding: 20px 50px 50px 50px;
+    gap: 50px;
   }
 }
