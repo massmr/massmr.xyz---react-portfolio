@@ -34,9 +34,9 @@ export const Grid = ({
 
   //Grid entrance animation
   //2 versions : mobile or desktop
-  
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
   };
