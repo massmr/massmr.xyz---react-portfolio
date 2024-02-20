@@ -290,7 +290,7 @@ export const Grid = ({
       <div className="grid-lvl-1 lvl-1-top">
         <div className="grid-lvl-2 lvl-2-top-top">
           <div className={`grid-lvl-3 lvl-3-top-left item-1-container ${gridActive1 ? 'item-active' : ''}`}>
-
+            
             <GridItem className="item-1"
               name={itemName1}
               openItemPage={() => openItemPage(itemName1)}

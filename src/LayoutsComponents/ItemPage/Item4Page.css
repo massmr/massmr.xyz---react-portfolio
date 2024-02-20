@@ -1,9 +1,9 @@
 .item-4-page-container {
   display: flex;
   flex-flow: column nowrap;
-  gap: 20px;
+  gap: 40px;
+  max-width: 666px;
   width: 100%;
-  height: 100%;
 }
 .item-4-page-container > * {
   font-family: 'Jost', sans-serif;
@@ -15,31 +15,52 @@
 }
 .item-4-page-image-container > img {
   border-radius: 25px;
-
+  margin-top: 10px;
 }
 .item-4-page-text-container {
   flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+  padding-bottom: 20px;
 }
-.item-4-page-text-container > h1{
+.item-4-page-title-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+}
+.item-4-text-paragraph-container {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 15px;
+}
+.item-4-page-title-container > h1{
   font-family: 'Major Mono Display', monospace;
   letter-spacing: -1px;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  margin-bottom: 
 }
 .item-4-text-colored {
   color: #9B5DE5;
   font-weight: 900;
 }
-.item-4-page-text-container > h2{
+.item-4-page-title-container > h2{
   font-family: 'Major Mono Display', monospace;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
-
 @media (min-width: 1024px) {
+   .item-4-page-text-container {
+    padding-bottom: 100px;
+  }
+}
+@media (min-width: 1440px) {
   .item-4-page-container {
     flex-flow: row nowrap;
     position: relative;
     max-width: 1440px;
     margin-left: -20px;
+    height: 100%;
   }
   .item-4-page-image-container {
     height: 100%;
@@ -48,14 +69,14 @@
     margin: 0;
     height: 100%;
   }
-  .item-4-page-text-container > h1 {
+  .item-4-page-title-container > h1 {
     letter-spacing: -1px;
     font-size: 2rem;
     margin-bottom: 30px;
     margin-top: -15px;
     text-align: justify;
   }
-  .item-4-page-text-container > h2 {
+  .item-4-page-title-container > h2 {
     font-size: 1.1rem;
     margin-bottom: 25px;
   }
@@ -66,7 +87,11 @@
     text-align: left; 
     margin-left: 40px;
   }
+ 
   .item-4-text-paragraph-container {
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
     max-width: calc(100% / 3 * 2);
     position: relative;
     left: 50%;
@@ -74,6 +99,9 @@
   }
   .item-4-text-paragraph {
     text-align: justify;
-    margin-top: 60px;
+  }
+  .item-4-page-spacer {
+    width: 0;
+    height: 0;
   }
 }

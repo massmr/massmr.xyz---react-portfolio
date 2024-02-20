@@ -12,23 +12,15 @@
   font-family: 'Jost', sans-serif;
   letter-spacing: 2px;
 }
-.item-1-overflowing-wrapper {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  z-index: 100;
-  top: 28%;
-  left: 52%;
-}
 .item-1-icon {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @media (min-width: 1024px) {
   .item-1-button {
     transform: translateX(-50%) translateY(-50%) scale(1.5);
   }
-  .item-1-overflowing-wrapper {
-    top: 57%;
-    left: 75%;
-  }
 }
-
