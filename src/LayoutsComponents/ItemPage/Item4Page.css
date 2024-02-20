@@ -41,6 +41,9 @@
   font-size: 1.5rem;
   margin-bottom: 
 }
+.item-4-text-paragraph {
+  text-align: justify;
+}
 .item-4-text-colored {
   color: #9B5DE5;
   font-weight: 900;
