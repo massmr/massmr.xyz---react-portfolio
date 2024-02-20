@@ -54,7 +54,7 @@ export const Item7PageContent = () => {
             Le wagon <span>fullstack developer Bootcamp</span>
           </h1>
           <p className="item-7-image-description-date">
-            will completed in august 2024
+            will be completed in august 2024
           </p>
           <p className="item-7-description-text">{text2}</p>
         </div>
