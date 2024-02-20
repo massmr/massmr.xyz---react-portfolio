@@ -16,4 +16,7 @@
     justify-content: center;
     max-width: 1440px;
   }
+  .item-page-item4 {
+    height: calc(100% - 113px);
+  }
 }
