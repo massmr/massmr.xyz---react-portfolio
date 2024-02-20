@@ -9,6 +9,17 @@
   width: 100%;
   max-width: 450px;
 }
+.banner-logo {
+  height: 37px;
+  padding: 0;
+  transition: padding 150ms ease, border-bottom 150ms ease;
+  border-bottom: none;
+}
+.banner-logo-item-page {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px solid #D3D3D3;
+}
 .banner-title {
   display: flex;
   align-items: center;
@@ -61,6 +72,10 @@
     justify-content: space-between;
     max-width: 1440px;
     padding-bottom: 0px;
+    flex-shrink: 0;
+  }
+  .banner-logo {
+    height: 50px;
   }
   .banner-title {
     font-size: 53px;
