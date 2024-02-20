@@ -55,9 +55,3 @@ html {
   height: 100%;
 }
 
-@media only screen and (max-width: 1024px) and (orientation:landscape) {
-  html {
-    height: 100vw;
-    transform: rotate(-90deg);
-  }
-}
