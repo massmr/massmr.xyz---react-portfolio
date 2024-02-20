@@ -1,12 +1,18 @@
 .item-page-item7 {
+  display: block !important;
+  position: relative;
   flex-shrink: 0;
 }
 .item-7-page-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-flow: column nowrap;
   gap: 30px;
   justify-content: center;
   align-items: center;
+  padding-bottom: 20px;
 }
 .item-7-title {
   font-family: 'Jost', sans-serif;
@@ -83,6 +89,7 @@
     max-width: 980px;
     justify-content: unset;
     align-items: center;
+    padding-bottom: 50px;
   }
   .item-7-main-description {
     max-width: 600px;
