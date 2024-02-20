@@ -99,7 +99,7 @@ export const Banner = ({
           onClick={handleClick}
           src={logo} />
         <div className="banner-text-wrapper">
-          <h2 className="banner-subtitle">web developer</h2>
+          <h2 className="banner-subtitle">software engineer</h2>
           <h4 className="banner-text">
           Enter the <span className="banner-text-strong"> digital realm</span>
           </h4>
