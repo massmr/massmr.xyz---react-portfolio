@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
 //import components
-import { Loader } from './LayoutsComponents/Loader/Loader.jsx'
 import { Banner } from './Banner/Banner.jsx';
 import { Grid } from './GridOnFlex/GridOnFlex.jsx';
 import { Modale } from './LayoutsComponents/Modal/Modal.jsx';
@@ -14,7 +13,7 @@ import { HomePage } from './HomePage/HomePage.jsx';
 import { ItemPage } from './LayoutsComponents/ItemPage/ItemPage.jsx';
 
 //import hooks
-import { useOnLoadMedia } from './CustomHooks/checkOnLoad.jsx'
+import useOnLoadMedia from './CustomHooks/checkOnLoad.jsx'
 
 //import styles 
 import './App.css';
@@ -113,34 +112,22 @@ const App = () => {
   return(
     <>
       <SpeedInsights />
-      <section 
-        ref={containerRef}
-        className="body-background">
-        
-        { !mediaStatus && (
-          <Loader />
-        )}
+      <section className="body-background">
 
-        { mediaStatus && 
-          isModaleVisible && 
-          isModaleContent && (
+        { isModaleVisible && isModaleContent && (
           <Modale 
             state={isModaleVisible} 
             handleClose={handleModaleClose}>
             {isModaleContent}
           </Modale>
         )}
-        
-        { mediaStatus && (
-          <Banner 
+
+        <Banner 
           isGridActive={isGridActive}
           handleItemPageClose={handleItemPageClose} 
           isItemPageActive={isItemPageActive} />
-        )}
-                
-        { mediaStatus &&
-          isItemPageActive &&  
-          isItemPageName && (
+        
+        { isItemPageActive &&  isItemPageName &&(
           <ItemPage 
             name={isItemPageName} 
             isItemPageActive={isItemPageActive}
@@ -148,14 +135,11 @@ const App = () => {
           </ItemPage>
         )}
 
-        { mediaStatus &&
-          isHomePage && 
-          !isGridActive && (
+        { isHomePage && !isGridActive && (
           <HomePage deployGrid={handleQuitHomePage} />
         )}
         
-        { mediaStatus &&
-          isGridActive && (
+        { isGridActive && (
           <Grid 
             openItemPage={handleItemPageOpen}
             gridCloseAnimation={isGridClosing}
