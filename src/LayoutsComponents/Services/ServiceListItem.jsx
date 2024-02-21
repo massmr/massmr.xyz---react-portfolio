@@ -14,15 +14,23 @@ export const ServiceListItem = ({ service, optionalProp1 }) => {
   const [isShown, setIsShown] = useState(false);
   const [persistentDetails, setPersistentDetails] = useState(false);
   const [animateDetails, setAnimateDetails] = useState(false);
-   
+  const [isDetailActive, setIsDetailActive] = useState(false);  
+
   const handleShowDetails = () => {
     setIsShown(true);
   };
   const handleHideDetails = () => {
     setAnimateDetails(false);
   }
-
-  //always show for desktop useEffect 
+  const handleToggleActivation = () => {
+    setIsDetailActive((prev) => !prev);
+  }
+  const handleClick = () => {
+    handleShowDetails();
+    handleHideDetails();
+    handleToggleActivation();
+  }
+   //always show for desktop useEffect 
   useEffect(() => {
     if (windowWidth >= 1024) {
       setIsShown(true);
@@ -60,7 +68,10 @@ export const ServiceListItem = ({ service, optionalProp1 }) => {
   return (
     <div className="service-wrapper">
       
-      <div className="service-title-wrapper">
+      <div
+        tabIndex={0}
+        onClick={handleClick} 
+        className="service-title-wrapper">
         <h2 className="service-title">{title}</h2>
       </div>
       
@@ -70,9 +81,9 @@ export const ServiceListItem = ({ service, optionalProp1 }) => {
         
         <div className="service-detail-and-button-wrapper">
         {(windowWidth < 1024) && (
-          <SeeDetailButton 
-            handleShowDetails={handleShowDetails} 
-            handleHideDetails={handleHideDetails} />
+          <SeeDetailButton
+            onClick={handleClick}
+            isActive={isDetailActive} />
         )}
 
         {(windowWidth >= 1024) && (
