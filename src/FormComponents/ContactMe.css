@@ -76,16 +76,21 @@ textarea {
   width: 100%;
   height: auto;
 }
-.button-submit {
+.button-contact-form {
   width: 200px;
   height: 40px;
   color: #F8F9FA;
   font-family: 'Jost', sans-serif;
   font-size: 18px;
+  font-weight: 300;
   border-radius: 25px;
   margin-top: 20px;
-  border: none;
+  background-color: transparent;
+  border: 1px solid #F8F9FA;
+}
+.button-submit {
+  border: none !important;
   cursor: pointer;
-  background: rgb(195,126,240);
-  background: linear-gradient(30deg, rgba(195,126,240,1) 0%, rgba(147,143,208,0.9999504089355469) 100%);
+  background: rgb(195,126,240) !important;
+  background: linear-gradient(30deg, rgba(195,126,240,1) 0%, rgba(147,143,208,0.9999504089355469) 100%) !important;
 }
