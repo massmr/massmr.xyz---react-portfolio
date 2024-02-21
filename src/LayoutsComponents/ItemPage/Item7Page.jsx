@@ -9,7 +9,7 @@ export const Item7PageContent = () => {
     "The vast majority of my knowledge in software development has been self-taught, involving consistent hands-on experience with computer programming over an extensive period of my life. I am deeply passionate about continuously refining my skills in this field.. Happy Coding !"
   `
   const text1 = `
-    In order to enhance my theoretical knowledge, I enrolled in 'computer science' bachelor's program at Paris 8 Universsity as an online student. 
+    In order to enhance my theoretical knowledge, I enrolled in 'computer science' bachelor's program at Paris 8 University as an online student. 
   `
   const text2 = `
     As I am always looking to gain more practical experience, I decided to attend the 'Le Wagon' bootcamp during the university holiday break this summer.
