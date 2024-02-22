@@ -77,10 +77,15 @@ export const ProjectImage = ({
   //the images are named as this : 1st two chars of name + count
   const selectedIdentifier = projectSelected.slice(0, 2) + count.toString();
   const selectedImage = imageMap[selectedIdentifier]; 
+  
+   const handleContextMenu = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <>
       <img
+        onContextMenu={handleContextMenu}
         className="project-img"
         alt={images[0].alt}
         src={selectedImage.src} />
